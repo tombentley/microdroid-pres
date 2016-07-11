@@ -1,48 +1,20 @@
 import ceylon.html {
     P,
-    Ul,
-    Code,
-    Li,
-    H3,
-    H1,
-    Pre,
-    H2
+    H2,
+    H3
 }
-
-"Put the given string inside <pre><code>"
-Pre code(String text)
-    => Pre{clazz="code ceylon";
-        Code {
-            attributes=["data-language"->"ceylon"];
-            text
-        }
-    };
-
-"The actual presentation"
-Presentation presentation = Presentation {
+import com.github.tombentley.deck {
+    transitions,
+    Slide,
+    Transition
+}
+{Slide|Transition*} part1 => [
     Slide{
-        id="title";
-        H2{"The most incredible Ceylon presentation you'll ever see"},
-        H3{"Tom Bentley"},
-        H3{"Javazone, Oslo, September 2016"}
-        
-    },
-    transitions.insideCubeY,
-    Slide{
-        H1{"Ceylon"},
-        P{"Ceylon is"},
-        Ul{
-            Li{"A modern type safe programming language which runs on Java and JavaScript virtual machines"},
-            Li{"A modular platform with its own SDK"},
-            Li{"supported by a discoverable CLI and full-featured IDEs"},
-            Li{"well suited to developing microservices"},
-            Li{"Android-enabled"}
-        }
-    },
-    Slide{
+        speakerNotes = ["Introduce self"];
         H2{"A lightning tour of the language"},
         P{clazz="small"; "(10 minutes)"}
     },
+    //transitions.insideCubeX,
     Slide{
         id="hello";
         H3{"hello()"},
@@ -66,7 +38,6 @@ Presentation presentation = Presentation {
                     print("Hello " + name);
                 }""")
     },
-    //into,
     Slide{
         id="invocation";
         H3{"Invoking hello()"},
@@ -74,14 +45,13 @@ Presentation presentation = Presentation {
         code("""void hello(String name="world") {
                     print("Hello " + name);
                 }
-             """),
+                """),
         """then we can call it like this:""",
         code("""    // call site
                     hello();
                     hello("Tom");
                 """)
     },
-    //outof,
     Slide{
         id="null";
         H3{"String means string"},
@@ -93,7 +63,6 @@ Presentation presentation = Presentation {
             that might be null) to something that's 
             not expecting it."""
     },
-    //rotY,
     Slide{
         id="null-safety";
         H3{"String?"},
@@ -104,10 +73,9 @@ Presentation presentation = Presentation {
                 }"""),
         """The String? parameter type means "String or null".""",
         """There's no longer an error at the callsite""",
-            code("""    hello(null);"""),
+        code("""    hello(null);"""),
         """But we've got that error where we use `name`."""
     },
-    //flipY,
     Slide{
         id="if-exists";
         H3{"if(exists ..."},
@@ -127,7 +95,6 @@ Presentation presentation = Presentation {
         """The `if (exists ...` construct is a combined 
            typecheck-and-downcast in one."""
     },
-    //rotX,
     Slide{
         id="switch";
         H3{"switch"},
@@ -140,10 +107,9 @@ Presentation presentation = Presentation {
                     print("Hello, whoever you are");
                   }
                 }"""),
-                """The `case (is String)` is distinguishing the `String`
-                   case from the `Null` case."""
+        """The `case (is String)` is distinguishing the `String`
+           case from the `Null` case."""
     },
-    //flipX,
     Slide{
         id="flow-typing";
         H3{"Flow typing"},
@@ -152,14 +118,13 @@ Presentation presentation = Presentation {
            type. This synergy of control flow and 
            type narrowing is called **flow typing**.
            """,
-           code("""// name has type String?
-                   // "Hello "+name is a compile error
-                   if (exists name) {
-                       // name has type String
-                       // "Hello "+name is allowed
-                   }""")
+        code("""// name has type String?
+                // "Hello "+name is a compile error
+                if (exists name) {
+                    // name has type String
+                    // "Hello "+name is allowed
+                }""")
     },
-    //spin,
     Slide{
         id="union1";
         H3{"? was just sugar"},
@@ -170,7 +135,7 @@ Presentation presentation = Presentation {
             In a type `|` is an operator which means "or".
             It lets us list a bunch of cases."""
     },
-    transitions.right,
+    //transitions.right,
     Slide{
         id="union2";
         H3{"Union types"},
@@ -195,13 +160,13 @@ Presentation presentation = Presentation {
            All I need is something that consumes Strings.
            Any function that takes a single String 
            parameter will do.
-
+           
            The type of such a function is""",
-          code("""Anything(String)"""),
-                
-            """(Anything because I don't care what the 
-               function returns).
-               This is the `Callable` type."""
+        code("""Anything(String)"""),
+        
+        """(Anything because I don't care what the 
+           function returns).
+           This is the `Callable` type."""
     },
     Slide{
         id="hof3";
@@ -232,16 +197,16 @@ Presentation presentation = Presentation {
         """What if I want to greet several people? 
            I need `name` to become `names`, and I need to 
            be able to iterate it:""",
-           code("""
-                   void hello(Anything(String) emit, 
-                              {String*} names) {
-                       for (name in names) {
-                           emit("Hello ``name``\n");
-                       }
-                   }"""),
-           """`{String*}` means "Iterable of zero or more String".
-              (There's also `{String+}`
-              meaning "Iterable of one or more String")."""
+        code("""
+                void hello(Anything(String) emit, 
+                           {String*} names) {
+                    for (name in names) {
+                        emit("Hello ``name``\n");
+                    }
+                }"""),
+        """`{String*}` means "Iterable of zero or more String".
+           (There's also `{String+}`
+           meaning "Iterable of one or more String")."""
     },
     Slide{
         id="inference";
@@ -283,12 +248,12 @@ Presentation presentation = Presentation {
                         // ...
                     }
                 }"""),
-         """The class has its own parameter list. Because
-            `emit` is in an outer scope of `hello` I can use it — 
-            I don't need to explictly declare a field.
-            `shared` allows the method to be called from outside
-            `Greeter`.
-            """
+        """The class has its own parameter list. Because
+           `emit` is in an outer scope of `hello` I can use it — 
+           I don't need to explictly declare a field.
+           `shared` allows the method to be called from outside
+           `Greeter`.
+           """
     },
     Slide{
         id="";
@@ -298,12 +263,12 @@ Presentation presentation = Presentation {
             positional arguments:""",
         code("""Greeter(print);
                 """),
-            """Or I can invoke with **named arguments**:""",
+        """Or I can invoke with **named arguments**:""",
         code("""Greeter{
                     emit=print;
                 };
                 """),
-            """Note each name binding ends with a `;`."""
+        """Note each name binding ends with a `;`."""
     },
     Slide{
         id="named-arguments";
@@ -316,8 +281,8 @@ Presentation presentation = Presentation {
                     names=["Tom", "Dick", "Harry"];
                 };
                 """),
-            """Or if there's a single unspecified iterable parameter
-               I can list them:""",
+        """Or if there's a single unspecified iterable parameter
+           I can list them:""",
         code("""greeter.hello{
                     "Tom", "Dick", "Harry"
                 };""")
@@ -340,26 +305,8 @@ Presentation presentation = Presentation {
                     );
                   }
                 }"""),
-         """The syntax matches the tree of 
-            objects we're building."""
-    },
-    // TODO comprehensions
-    Slide{
-        H2{"A microservice using ceylon.http.server"},
-        P{clazz="small"; "(10 minutes)"}
-    },
-    Slide{
-        H2{"A microservice using vertX"},
-        P{clazz="small"; "(15 minutes)"}
-    },
-    Slide{
-        H2{"An Android app"},
-        P{clazz="small"; "(20 minutes)"}
-    },
-    Slide{
-        H2{"Fin"},
-        P{clazz="small"; "(the rest of your life)"},
-        P{"Questions"}
+        """The syntax matches the tree of 
+           objects we're building."""
     }
-
-};
+    // TODO comprehensions];
+];

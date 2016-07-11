@@ -3,7 +3,7 @@ import ceylon.html {
 }
 
 "The state of a slide within a 3D certesian coordinate system "
-class State(x=null, y=null, z=null, 
+shared class State(x=null, y=null, z=null, 
     scale=null, 
     rotateX=null, rotateY=null, rotateZ=null) {
     shared Integer? x;

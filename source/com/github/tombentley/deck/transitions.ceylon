@@ -1,16 +1,16 @@
 
 
 "A transition is a way of producing a new state from a given state."
-alias Transition => State(State);
+shared alias Transition => State(State);
 
-object transitions {
+shared object transitions {
 
     "The next state will be to the right of the last one. 
      The view port moves to the right, 
      the slides appear to more to the left."
-    shared Transition right = function(State state) => state.translate { ẟx = 1500; };
+    shared Transition left = function(State state) => state.translate { ẟx = 1500; };
     "The next state will be to the left of the last one"
-    shared Transition left = function(State state) => state.translate { ẟx = -1500; };
+    shared Transition right = function(State state) => state.translate { ẟx = -1500; };
     "The next state will be below the last one"
     shared Transition down = function(State state) => state.translate { ẟy = 800; };
     "The next state will be above the last one"

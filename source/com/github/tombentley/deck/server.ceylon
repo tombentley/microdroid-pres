@@ -18,9 +18,10 @@ import ceylon.io {
     SocketAddress
 }
 
+
 "Start a webserver to serve the presentation.
  Looks for a --port command line argument, defaults to 8080 if absent."
-shared Integer server() {
+shared void serve(Presentation presentation, String address="127.0.0.1", Integer port=8080) {
     //create a HTTP server
     value etag = system.milliseconds;
     value server = newServer {
@@ -55,17 +56,9 @@ shared Integer server() {
             }
         }
     };
-    value port = parseInteger(process.namedArgumentValue("port") else "8080");
-    if (!exists port) {
-        process.writeErrorLine("invalid --port");
-        return 1;
-    } else {
-        //start the server on port 8080
-        try {
-            server.start(SocketAddress("127.0.0.1", port));
-            return 0;
-        } catch (Exception e) {
-            return 2;
-        }
-    }
+    
+    server.start(SocketAddress { 
+        address = address; 
+        port = port; 
+    });
 }
