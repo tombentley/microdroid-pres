@@ -9,7 +9,8 @@ import ceylon.http.server {
     Response,
     startsWith,
     AsynchronousEndpoint,
-    isRoot
+    isRoot,
+    endsWith
 }
 import ceylon.http.server.endpoints {
     serveStaticFile
@@ -34,6 +35,13 @@ shared void serve(Presentation presentation, String address="127.0.0.1", Integer
         },
         AsynchronousEndpoint {
             path = startsWith("/js");
+            acceptMethod = { get };
+            service = serveStaticFile {
+                externalPath = ".";
+            };
+        },
+        AsynchronousEndpoint {
+            path = endsWith(".svg");
             acceptMethod = { get };
             service = serveStaticFile {
                 externalPath = ".";

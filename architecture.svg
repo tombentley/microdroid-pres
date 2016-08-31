@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="32cm" height="9cm" viewBox="413 292 629 171" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="901.465" y="344.079" width="138.95" height="70"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="901.465" y="344.079" width="138.95" height="70"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="970.94" y="366.979">
+      <tspan x="970.94" y="366.979">number service</tspan>
+      <tspan x="970.94" y="382.979">localhost:8081</tspan>
+      <tspan x="970.94" y="398.979">ceylon.http.server</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="723.421" y="293.006" width="130.5" height="70"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="723.421" y="293.006" width="130.5" height="70"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="788.671" y="315.906">
+      <tspan x="788.671" y="315.906">adjective service</tspan>
+      <tspan x="788.671" y="331.906">localhost:8082</tspan>
+      <tspan x="788.671" y="347.906">vertx</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="724.011" y="391.006" width="116.35" height="70"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="724.011" y="391.006" width="116.35" height="70"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="782.186" y="413.906">
+      <tspan x="782.186" y="413.906">verbservice</tspan>
+      <tspan x="782.186" y="429.906">localhost:8083</tspan>
+      <tspan x="782.186" y="445.906">vertx.web</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="561.265" y="344.079" width="116.35" height="70"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="561.265" y="344.079" width="116.35" height="70"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="619.44" y="366.979">
+      <tspan x="619.44" y="366.979">render service</tspan>
+      <tspan x="619.44" y="382.979">localhost:8084</tspan>
+      <tspan x="619.44" y="398.979">gyokuro</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="414.04" y="352.079" width="98.8" height="54"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="414.04" y="352.079" width="98.8" height="54"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="463.44" y="382.979">
+      <tspan x="463.44" y="382.979">android app</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="854.908" y1="346.566" x2="891.434" y2="356.801"/>
+    <polygon style="fill: #000000" points="898.656,358.825 887.678,360.941 891.434,356.801 890.376,351.312 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="898.656,358.825 887.678,360.941 891.434,356.801 890.376,351.312 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="841.367" y1="411.293" x2="891.019" y2="398.949"/>
+    <polygon style="fill: #000000" points="898.298,397.139 889.8,404.404 891.019,398.949 887.387,394.699 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="898.298,397.139 889.8,404.404 891.019,398.949 887.387,394.699 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="678.615" y1="361.221" x2="713.11" y2="350.81"/>
+    <polygon style="fill: #000000" points="720.29,348.643 712.161,356.319 713.11,350.81 709.272,346.746 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="720.29,348.643 712.161,356.319 713.11,350.81 709.272,346.746 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="678.612" y1="396.141" x2="713.659" y2="406.247"/>
+    <polygon style="fill: #000000" points="720.865,408.325 709.871,410.358 713.659,406.247 712.642,400.75 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="720.865,408.325 709.871,410.358 713.659,406.247 712.642,400.75 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="513.837" y1="379.079" x2="550.556" y2="379.079"/>
+    <polygon style="fill: #000000" points="558.056,379.079 548.056,384.079 550.556,379.079 548.056,374.079 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="558.056,379.079 548.056,384.079 550.556,379.079 548.056,374.079 "/>
+  </g>
+</svg>

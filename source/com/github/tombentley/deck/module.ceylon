@@ -13,5 +13,7 @@ module com.github.tombentley.deck "1.0.0" {
     import ceylon.http.common "1.2.3";
     import ceylon.http.server "1.2.3";
     //TODO support slides in markdown
-    //import ceylon.markdown.core "1.0.0";
+    import ceylon.markdown.core "1.0.0";
+    import ceylon.markdown.html "1.0.0";
+    import java.base "8";
 }
