@@ -1,11 +1,8 @@
 import ceylon.html {
-    P,
-    Ul,
     H2,
-    Li,
-    H3,
-    H1
+    H3
 }
+
 import com.github.tombentley.deck {
     Slide,
     transitions,
@@ -20,16 +17,16 @@ import com.github.tombentley.deck {
         H3{"Javazone, Oslo, September 2016"}
         
     },
-    transitions.down,
+    transitions.left,
     Slide{
         id="ceylon-is";
-        """### Ceylon
+        """### What is Ceylon?
            
-           Ceylon
+           Ceylon...
            
-           * is a modern type-safe programming language which runs on 
+           * is a modern, type-safe programming language which runs on 
              Java and JavaScript virtual machines,
-           * is also a modular platform with its own SDK,
+           * is also a platform coming with its own modular SDK,
            * is supported by discoverable CLI tools,
            * has a mature Eclipse IDE,
            * has an awesome new IntelliJ IDE,

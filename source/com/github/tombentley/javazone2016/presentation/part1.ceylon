@@ -1,32 +1,29 @@
-import ceylon.html {
-    P
-}
-
 import com.github.tombentley.deck {
     Slide,
     Transition
 }
 {Slide|Transition*} part1 => [
     Slide{
-        "A lightning tour of the language",
-        P{clazz="small"; "(10 minutes)"}
+        "## A lightning tour of the language"
     },
     //transitions.insideCubeX,
     Slide{
         id="hello";
         """### `hello()`
            
-           Let's start with a function and see where we end up.
+           Let's start with hello world:
            
                void hello(String name) {
                    print("Hello " + name);
                }
            
-           * Not much to say here.
            * `print` is a function from 
              the Ceylon language module (`ceylon.language`) that prints 
              to standard output.
-           * We can concatenate Strings using `+`."""
+           * We can concatenate Strings using `+`.
+           * A function doesn't have to be in a class, it can be declared
+             at the top level.
+           """
     },
     Slide{
         id="defaulted-parameters";
@@ -43,18 +40,6 @@ import com.github.tombentley.deck {
                     print("Hello " + name);
                 }
            
-        """
-    },
-    Slide{
-        id="invocation";
-        """### Invoking `hello()`
-           
-           Given
-           
-               void hello(String name="world") {
-                   print("Hello " + name);
-               }
-           
            then we can call it like this:
            
                // call site
@@ -64,22 +49,26 @@ import com.github.tombentley.deck {
     },
     Slide{
         id="null";
-        """### `String` means string
+        """### `String` means 'string'
+           
+           I can't do this:
            
                hello(null);// error
            
-           * Ceylon is very particular about null.
+           * Ceylon is very particular about `null`.
            * `String` means "a string" and not
              "a string or null" (like it does in Java).
-           * I'm not allowed to pass null (or something 
+           * In fact in Ceylon `null` has its own type, `Null`.
+           * So I'm not allowed to pass `null` (or something 
              that might be null) to something that's 
-             not expecting it."""
+             not expecting it: 
+             It follows from the language assignability rules."""
     },
     Slide{
         id="null-safety";
         """### `String?`
            
-           If I wanted to permit `hello()` to take a `null` argument?
+           What if I wanted to permit `hello()` to take a `null` argument?
            
            I would have to declare it slightly differently:
            
@@ -91,19 +80,19 @@ import com.github.tombentley.deck {
            
            There's no longer an error at the callsite
            
-               hello(null);
+               hello(null);// now allowed!
            
            But we've got that *new* error where we use `name`."""
     },
     Slide{
         id="if-exists";
-        """### `if(exists ...`
+        """### `if(exists ...)`
            
-           Since `name` has the type
-           "`String` or null" there exists the possibility 
-           it could be `null`. So we need to branch 
-           to distinguish the `null` and non-`null` 
-           cases:
+           * Since `name` has the type
+             "`String` or null" it could be `null`.
+           * We can branch 
+             to distinguish the two 
+             cases:
            
                void hello(String? name="world") {
                    if (exists name) {
@@ -113,8 +102,9 @@ import com.github.tombentley.deck {
                    }
                }
            
-           The `if (exists ...` construct is a combined 
-           typecheck-and-downcast in one)."""
+           * The `if (exists ...` construct is a combined 
+            typecheck-and-downcast in one).
+           * Equivalently I could say `if (is String name) ...`."""
     },
     Slide{
         id="switch";
@@ -141,17 +131,20 @@ import com.github.tombentley.deck {
         id="flow-typing";
         """### Flow typing
            
-           Within the block guarded by the `if (exists ...)`
-           or `switch (is ...)` the value automatically has the narrowed 
-           type. This synergy of control flow and 
-           type narrowing is called **flow typing**.
+           * Outside the if or swith `name` is a `String?`
+           * But within the block guarded by the `if (exists ...)`
+             or `switch (is ...)` the compiler treats the 
+             `name` value as having the narrower type `String`.
            
                // outside if block name has type String?
-               // and "Hello "+name is a compile error
+               // (so "Hello "+name is a compile error)
                if (exists name) {
                     // inside block name has type String
-                    // and so "Hello "+name is allowed
+                    // (so "Hello "+name is allowed)
                }
+           
+           * This synergy of control flow and 
+            type narrowing is called **flow typing**.
         """
     },
     Slide{
@@ -164,14 +157,8 @@ import com.github.tombentley.deck {
                
            (pronounced "string or null"). 
            
-           * `Null` is the type of `null`.
            * In a type `|` is an operator which means "or".
-           * It lets us list a bunch of cases."""
-    },
-    //transitions.right,
-    Slide{
-        id="union2";
-        """### Union types
+           * It lets us list a bunch of cases.
            
            We can use other types with `|`.
            
@@ -179,9 +166,9 @@ import com.github.tombentley.deck {
            
            just means "String or Integer". 
            
+           * We can still use `if` or `switch` to distinguish the cases.
            * We call these types **union types**.
-           * Again we can use `if` or `switch` to distinguish the cases. 
-           """
+        """
     },
     Slide{
         id="hof";
@@ -218,7 +205,8 @@ import com.github.tombentley.deck {
         
            Let's add a parameter for that:
            
-               void hello(String name, Anything(String) emit=print) {
+               void hello(String name, 
+                          Anything(String) emit) {
                    emit("Hello " + name);
                }
            
@@ -252,8 +240,8 @@ import com.github.tombentley.deck {
            I need `name` to become `names`, and I need to 
            be able to iterate it:
            
-               void helloAll(Anything(String) emit, 
-                       {String*} names) {
+               void helloAll(void emit(String str), 
+                             {String*} names) {
                    for (name in names) {
                        emit("Hello ``name``\n");
                    }
@@ -267,14 +255,14 @@ import com.github.tombentley.deck {
     Slide{
         id="inference";
         """### Look, no types!
-           
-               for (name in names) {
                
            Note that I didn't need to explicitly declare the type of
            `name` in that `for` statement.
            
+               for (name in names) {
+           
            The compiler looks on the right hand side (at `names`), sees an 
-           `Iterable<String>` so knows `name` must be a `String`."""
+           `Iterable<String>` so infers that `name` must be a `String`."""
     },
     Slide{
         id="inference2";
@@ -287,42 +275,43 @@ import com.github.tombentley.deck {
                // compiler knows greeting is a String
                value greeting = "Hello ";
            
-           * We can use the `value` (or `function`) keyword where we 
-             would have to write a type.
-           * This is called **type inference**.
+           * We can usually use the `value` (or `function`) 
+             keyword where we  would have to write a type.
            * The compiler always chooses the single 
-             most specific type."""
+             most specific type (by looking at the assigned expression).
+           * This is called **type inference**.
+           
+             """
     },
     Slide{
         id="iterable-literals";
         """### Iterable literals
            
-           How might I call `helloAll()`? 
-           I need an iterable.
-           I can use an *iterable literal*:
+           * How might I call `helloAll()`? 
+           * I need an iterable.
+           * I can use an *iterable literal*:
            
-               value names = {"Tom", "Dick", "Harry"};// iterable literal
+               value names = {"Tom", "Dick", "Harry"};
                helloAll(names);
            
-           * The type of `names` is `{String+}` (`Iterable` of one or more `String`s).
-           * `Iterable`s are *lazily evaluated*.
+           * The type of `names` is `{String+}` ("`Iterable` of one or more `String`s").
+           * `Iterable` literals are *lazily evaluated*.
            """
     },
     Slide{
-        id="tuple literals";
+        id="tuple-literals";
         """###  Tuple literals
            
            Alternatively I could use a `Tuple` to call `helloAll()`
            (`Tuple` inherits `Iterable`):
            
-               value names = ["Tom", "Dick", Harry"];
+               value names = ["Tom", "Dick", "Harry"];
                helloAll(names);
                
            * The type of `names` is `String[3]` (which means `[String, String, String]`).
            * A `Tuple` knows the type of each of its elements (so I can have
            `[String, Integer, Boolean]` for example).
-           * There are other kinds of Iterable too.
-           """
+        """
     },
     Slide{
         id="comprehension";
@@ -333,13 +322,15 @@ import com.github.tombentley.deck {
            
                void greetDogOwners({Animal*} pets) {
                    helloAll({for (pet in pets)
-                       if (is Dog pet) 
-                           pet.owner});
-                           
-           * Rather than listing elements in the iterable or tuple literal I use `for`
-           * The `if` filters out the non-Dogs
-           * Then I get the `Dog`'s owner
+                               if (is Dog pet) 
+                                 pet.owner});
+               }
+           
+           * Rather than listing elements in the iterable or tuple literal I use `for`,
+           * the `if` filters out the non-`Dog`s,
+           * then I get the `Dog`'s `owner`.
            * In general, I can combine `for` and `if` arbitrarily.
+           * Easier to read that `map()`, `filter()` etc.
            """
     },
     Slide{
@@ -394,7 +385,7 @@ import com.github.tombentley.deck {
                    names=["Tom", "Dick", "Harry"];
                };
            
-           Or if where's a single unspecified `Iterable` parameter
+           Or if there is a single unspecified `Iterable` parameter
            I can list them:
         
                helloAll{
@@ -402,27 +393,15 @@ import com.github.tombentley.deck {
                };
         """
     },
-    Slide{
-        id="html-getter";
-        """By nesting named arguments I end up with a tree of invocations.
-           Let's make a `Greeter` that outputs HTML:
+    Slide {
+        id="enough";
+        """### Just enough
            
-               class HtmlGreeter(Anything(Node) emit) {
-                 shared void hello({String*} names) {
-                   emit(
-                     Div{
-                       "Hello ", 
-                       Span{
-                         clazz="name";
-                         children=names;
-                       }
-                     }
-                   );
-                 }
-               }
+           There's a lot more to Ceylon than just the language, so now 
+           you're going to see some of the SDK, IDE and CLI tools.
            
-           The syntax matches the tree of 
-           objects we're building."""
+           We've covered enough of the language that you should be able 
+           to understand *most* of the code you're going to see.
+           """
     }
-    
 ];

@@ -71,14 +71,16 @@ shared class Presentation(
         };
         
         p("""    <script src="js/impress.js"></script>
+                 <script src="js/rainbow-custom.min.js"></script>
+                 <script src="js/language/ceylon.js"></script>
                  <script>
+                   Rainbow.defer = true;
                    document.addEventListener("DOMContentLoaded", function(event) {
+                     Rainbow.color();
                      var i =  impress();
                      i.init();
                    });
                  </script>
-                 <script src="js/rainbow-custom.min.js"></script>
-                 <script src="js/language/ceylon.js"></script>
                </body>
              </html>""");
     }

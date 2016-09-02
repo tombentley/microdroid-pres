@@ -25,7 +25,7 @@ Presentation presentation =>
                        and how it can be used to write microservices and 
                        Android applications"; 
         author = "Tom Bentley"; 
-        slides = intro.chain(part1).chain(part2).chain(part3).chain(part4).chain(outro); 
+        slides = intro.chain(part1).chain(part2).chain(part3).chain(part4).chain(part5).chain(outro); 
     };
 
 "Generate the presentation as HTML"

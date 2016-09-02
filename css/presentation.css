@@ -462,3 +462,16 @@ pre.code {
   font-size: 18pt;
   font-weight: bold;
 }
+
+code {
+    font-weight: bold;
+}
+
+h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

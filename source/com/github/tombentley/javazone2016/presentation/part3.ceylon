@@ -9,10 +9,7 @@ import ceylon.html {
 {Slide|Transition*} part3 = [
     Slide{
         id="part-3";
-        """## A microservice using Vert.x
-           
-           (15 minutes)
-        """
+        """## A microservice using Vert.x"""
     },
     Slide{
         id="what-is-vertx";
@@ -33,7 +30,7 @@ import ceylon.html {
         id="adjectives";
         """### An adjective server
            
-           We're going to write a microservice which returns adjectives
+           We're going to see a microservice which returns adjectives
            (e.g. "awesome") 
            or adverbs (e.g. "awesomly") chosen randomly from a 
            hardcoded list.
@@ -47,18 +44,21 @@ import ceylon.html {
     // cut to vertx demo
     Slide{"### Demo"},
     Slide{
-        """### Critique
-           
-           * Using the vertex core API is still quite low-level. 
-             It doesn't do any of the following:
-               * Routing & path matching
-               * Cookies, sessions
-               * Forms & uploads
-               * Authentication & Authorization
-               * etc...
-           * the callback-based programming model won't suit everyone.
-           * On the other hand, it reactive, non-blocking should scale well
-        """
+        """### Critique""",
+        Ul{
+            Li{"""Using the vertex core API is still quite low-level. 
+                  It doesn't do any of the following:""",
+                Ul{
+                    Li{"Routing & path matching"},
+                    Li{"Cookies, sessions"},
+                    Li{"Forms & uploads"},
+                    Li{"Authentication & Authorization"},
+                    Li{"etc..."}
+               }
+           },
+           Li{"the callback-based programming model won't suit everyone."},
+           Li{"On the other hand, it reactive, non-blocking should scale well"}
+       }
     },
     Slide{
         id="verbs";
