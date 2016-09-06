@@ -5,14 +5,20 @@ import ceylon.html {
 
 import com.github.tombentley.deck {
     Slide,
-    Transition
+    Transition,
+    State,
+    transitions
 }
 
 {Slide|Transition*} part2 = [
+    (State state) => State(0, 1600),
     Slide{
         id="part-2";
-        """## A microservice using `ceylon.http.server`"""
+        """## A microservice using `ceylon.http.server` 
+           
+           ### (in Eclipse)"""
     },
+    transitions.left,
     //Slide {
     //    id="number-arch";
     //    H3{"Architecture"},
@@ -33,16 +39,16 @@ import com.github.tombentley.deck {
            
            * They will receive a response containing a random integer
              between `min` and `max` (inclusive).
-        """,
-        P{A{href="http://localhost:8081/numbers/number?min=0&max=10";
-            "http://localhost:8081/numbers/number?min=0&max=10"}}
+        """
         
      },
      Slide {
          """### Implementation
             
             * We're going to use `ceylon.http.server`, part of the Ceylon SDK
-            * `ceylon.http.server` uses undertow and xnio under the covers
+            * `ceylon.http.server` uses undertow and xnio (from the JBoss 
+              project) under the covers
+            * So we benefit from all their engineering efforts "for free"
             """
      },
      Slide {"### Demo"},

@@ -1,51 +1,34 @@
 import com.github.tombentley.deck {
     Slide,
-    Transition
+    Transition,
+    State,
+    transitions
 }
 {Slide|Transition*} part1 => [
+    (State state) => State(0, 800),
     Slide{
         "## A lightning tour of the language"
     },
-    //transitions.insideCubeX,
+    transitions.left,
     Slide{
         id="hello";
         """### `hello()`
            
            Let's start with hello world:
            
-               void hello(String name) {
+               shared void hello(String name) {
                    print("Hello " + name);
                }
            
+           * A function doesn't have to be in a class, it can be declared
+             at the top level.
+           * The `shared` annotation means the declaration is visible outside 
+             its container (in this case outside the module).
            * `print` is a function from 
              the Ceylon language module (`ceylon.language`) that prints 
              to standard output.
            * We can concatenate Strings using `+`.
-           * A function doesn't have to be in a class, it can be declared
-             at the top level.
            """
-    },
-    Slide{
-        id="defaulted-parameters";
-        """### Defaulted parameters
-           
-           What if we want to be able to call `hello`
-           without passing an argument? 
-           
-           Ceylon doesn't 
-           have method overloading like Java does. 
-           But we *can* give parameters a default value.
-           
-               void hello(String name="world") {
-                    print("Hello " + name);
-                }
-           
-           then we can call it like this:
-           
-               // call site
-               hello();
-               hello("Tom");
-        """
     },
     Slide{
         id="null";
@@ -72,7 +55,7 @@ import com.github.tombentley.deck {
            
            I would have to declare it slightly differently:
            
-               void hello(String? name="world") {
+               void hello(String? name) {
                    print("Hello " + name);// error
                }
            
@@ -94,15 +77,15 @@ import com.github.tombentley.deck {
              to distinguish the two 
              cases:
            
-               void hello(String? name="world") {
+               void hello(String? name) {
                    if (exists name) {
                         print("Hello " + name);
                    } else {
-                        print("Hello, whoever you are");
+                        print("Hello world");
                    }
                }
            
-           * The `if (exists ...` construct is a combined 
+           * The `if (exists ...)` construct is a combined 
             typecheck-and-downcast in one).
            * Equivalently I could say `if (is String name) ...`."""
     },
@@ -131,9 +114,9 @@ import com.github.tombentley.deck {
         id="flow-typing";
         """### Flow typing
            
-           * Outside the if or swith `name` is a `String?`
+           * Outside the `if` or `case` the value `name` is a `String?`
            * But within the block guarded by the `if (exists ...)`
-             or `switch (is ...)` the compiler treats the 
+             or `case(is ...)` the compiler treats the 
              `name` value as having the narrower type `String`.
            
                // outside if block name has type String?
@@ -144,7 +127,7 @@ import com.github.tombentley.deck {
                }
            
            * This synergy of control flow and 
-            type narrowing is called **flow typing**.
+            type narrowing is called *flow typing*.
         """
     },
     Slide{
@@ -160,15 +143,37 @@ import com.github.tombentley.deck {
            * In a type `|` is an operator which means "or".
            * It lets us list a bunch of cases.
            
-           We can use other types with `|`.
+           We can use arbitrary other types with `|`.
            
-               String|Integer
+               String|Integer|Boolean
            
-           just means "String or Integer". 
+           just means "`String` or `Integer` or `Boolean`". 
            
            * We can still use `if` or `switch` to distinguish the cases.
-           * We call these types **union types**.
+           * We call these types *union types*.
         """
+    },
+    Slide{
+        id="defaulted-parameters";
+        """### Defaulted parameters
+           
+           What if we want to be able to call `hello`
+           without passing an argument? 
+           
+           Ceylon doesn't 
+           have method overloading like Java does. 
+           But we *can* give parameters a default value.
+           
+               void hello(String name="world") {
+                    print("Hello " + name);
+                }
+           
+           then we can call it like this:
+           
+               // call site
+               hello();
+               hello("Tom");
+           """
     },
     Slide{
         id="hof";
@@ -237,7 +242,7 @@ import com.github.tombentley.deck {
            
            What if I want to greet several people? 
            
-           I need `name` to become `names`, and I need to 
+           I need `names` rather than a single `name`, and I need to 
            be able to iterate it:
            
                void helloAll(void emit(String str), 
@@ -279,7 +284,7 @@ import com.github.tombentley.deck {
              keyword where we  would have to write a type.
            * The compiler always chooses the single 
              most specific type (by looking at the assigned expression).
-           * This is called **type inference**.
+           * This is called *type inference*.
            
              """
     },
@@ -311,6 +316,7 @@ import com.github.tombentley.deck {
            * The type of `names` is `String[3]` (which means `[String, String, String]`).
            * A `Tuple` knows the type of each of its elements (so I can have
            `[String, Integer, Boolean]` for example).
+           * A `[String, Integer, Boolean]` is a `{String|Integer|Boolean+}`
         """
     },
     Slide{
@@ -326,7 +332,7 @@ import com.github.tombentley.deck {
                                  pet.owner});
                }
            
-           * Rather than listing elements in the iterable or tuple literal I use `for`,
+           * Rather than listing elements in the iterable or tuple literal I use `for` within the brackets,
            * the `if` filters out the non-`Dog`s,
            * then I get the `Dog`'s `owner`.
            * In general, I can combine `for` and `if` arbitrarily.
@@ -340,18 +346,19 @@ import com.github.tombentley.deck {
            Let's use a class to say more than just "hello":
            
                class Greeter(void emit(String str)) {
+                   value greeting = "Hello";
+                   value parting = "Cheerio";
                    shared void hello(String name) {
-                       emit("Hello " + name);
+                       emit("``greeting`` ``name``");
                    }
-                   shared void bye(String name) {
-                       emit("Cheerio " + name);
+                   shared void bye(String name) { /* ... */ }
                    }
                }
            
            * The class has its own parameter list. 
            * I can use `emit` because it is in an outer scope of `hello`.
-           * `shared` allows the method to be called from outside
-            `Greeter`.
+           * As before, `shared` allows the methods to be visible outside their container
+            (`Greeter` in this case).
         """
     },
     Slide{
@@ -397,11 +404,14 @@ import com.github.tombentley.deck {
         id="enough";
         """### Just enough
            
-           There's a lot more to Ceylon than just the language, so now 
-           you're going to see some of the SDK, IDE and CLI tools.
-           
            We've covered enough of the language that you should be able 
            to understand *most* of the code you're going to see.
+           
+           If you want to know more about the language, check out 
+           the 'Tour of Ceylon' ([http://ceylon-lang.org/documentation/current/tour](http://ceylon-lang.org/documentation/current/tour/))
+           
+           But there's a lot more to Ceylon than just the language, so now 
+           you're going to see some of the SDK, IDE and CLI tools.
            """
     }
 ];

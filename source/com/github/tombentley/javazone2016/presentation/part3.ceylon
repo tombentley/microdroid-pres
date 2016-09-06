@@ -1,15 +1,35 @@
 import com.github.tombentley.deck {
     Slide,
-    Transition
+    Transition,
+    State,
+    transitions
 }
 import ceylon.html {
     ...
 }
 
 {Slide|Transition*} part3 = [
+    (State state) => State(0, 2400),
     Slide{
         id="part-3";
-        """## A microservice using Vert.x"""
+        """## Two microservices using Vert.x 
+           
+           ### (on the command line)"""
+    },
+    transitions.left,
+    Slide{
+        id="adjectives";
+        """### An adjective server
+           
+           We're going to see a microservice which returns adjectives
+           (e.g. "awesome") 
+           or adverbs (e.g. "awesomly") chosen randomly from a 
+           hardcoded list.
+           
+           It will be a client of the random number service.
+           
+           Using the Vert.x core
+           API instead of `ceylon.http.server`."""
     },
     Slide{
         id="what-is-vertx";
@@ -26,27 +46,13 @@ import ceylon.html {
            * Therefore our handlers shouldn't block the event loop
         """
     },
-    Slide{
-        id="adjectives";
-        """### An adjective server
-           
-           We're going to see a microservice which returns adjectives
-           (e.g. "awesome") 
-           or adverbs (e.g. "awesomly") chosen randomly from a 
-           hardcoded list.
-           
-           It will be a client of the random number service.
-           
-           Very similar architecture as number server, but using the vertx core
-           API instead of `ceylon.http.server`."""
-    },
     // Architecture slide
     // cut to vertx demo
     Slide{"### Demo"},
     Slide{
-        """### Critique""",
+        """### Critique of Vert.x core""",
         Ul{
-            Li{"""Using the vertex core API is still quite low-level. 
+            Li{"""Using the Vert.x core API is still quite low-level. 
                   It doesn't do any of the following:""",
                 Ul{
                     Li{"Routing & path matching"},
@@ -69,14 +75,14 @@ import ceylon.html {
            
            It will also be a client of the random number service.
            
-           We'll do this using vertx web, which is a higher level API built 
-           on top of vertx core."""
+           We'll do this using Vert.x web, which is a higher level API built 
+           on top of Vert.x core."""
     },
     Slide {"### Demo"},
-    Slide{"""### Critique
+    Slide{"""### Critique of Vert.x web
              
-             * Lots more features to play with (e.g. routing etc), and
-             * a serialization library made life simpler,
-             * but again the callback-based approach won't suit everyone"""}
+             * Lots more features to play with 
+               (e.g. routing, authentication, uploads etc), and
+             * a serialization library made life simpler"""}
 
 ];

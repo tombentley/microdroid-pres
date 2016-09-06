@@ -61,12 +61,12 @@ shared class Presentation(
                  ");
         
         
-        variable value stat = State();
+        variable value state = State();
         renderTemplate {
             write = p; 
             node = Div{
                 id="impress";
-                for (transition->slide in prepped) slide.render(stat = transition(stat))
+                for (transition->slide in prepped) slide.render(state = transition(state))
             };
         };
         

@@ -26,16 +26,16 @@ Android applications' />
         <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
       </div>
       <div id="impress">
-  <div id="title" class="step slide" data-x="-1500" data-y="0" data-z="0">
+  <div id="title" class="step slide" data-x="0" data-y="0" data-z="0">
     <h2>The most incredible Ceylon presentation you'll ever see</h2>
     <h3>Tom Bentley</h3>
     <h3>Javazone, Oslo, September 2016</h3>
   </div>
-  <div id="ceylon-is" class="step slide" data-x="0" data-y="0" data-z="0">
+  <div id="ceylon-is" class="step slide" data-x="1000" data-y="0" data-z="0">
     <h3>What is Ceylon?</h3>
     <p>Ceylon...</p>
     <ul>
-      <li>is a modern type-safe programming language which runs on
+      <li>is a modern, type-safe programming language which runs on
 Java and JavaScript virtual machines,</li>
       <li>is also a platform coming with its own modular SDK,</li>
       <li>is supported by discoverable CLI tools,</li>
@@ -45,19 +45,27 @@ Java and JavaScript virtual machines,</li>
       <li>is Android-enabled</li>
     </ul>
   </div>
-  <div class="step slide" data-x="1500" data-y="0" data-z="0">
+  <div class="step slide" data-x="0" data-y="800">
     <h2>A lightning tour of the language</h2>
   </div>
-  <div id="hello" class="step slide" data-x="3000" data-y="0" data-z="0">
+  <div id="hello" class="step slide" data-x="1000" data-y="800" data-z="0">
     <h3>
       <code>hello()</code>
     </h3>
     <p>Let's start with hello world:</p>
-    <pre class="code ceylon"><code data-language="ceylon">void hello(String name) {
+    <pre class="code ceylon"><code data-language="ceylon">shared void hello(String name) {
     print("Hello " + name);
 }
 </code></pre>
     <ul>
+      <li>
+        <p>A function doesn't have to be in a class, it can be declared
+at the top level.</p>
+      </li>
+      <li>
+        <p>The <code>shared</code> annotation means the declaration is visible outside
+its container (in this case outside the module).</p>
+      </li>
       <li>
         <p>
           <code>print</code> is a function from
@@ -67,30 +75,9 @@ to standard output.</p>
       <li>
         <p>We can concatenate Strings using <code>+</code>.</p>
       </li>
-      <li>
-        <p>A function doesn't have to be in a class, it can be declared
-at the top level.</p>
-      </li>
     </ul>
   </div>
-  <div id="defaulted-parameters" class="step slide" data-x="4500" data-y="0" data-z="0">
-    <h3>Defaulted parameters</h3>
-    <p>What if we want to be able to call <code>hello</code>
-without passing an argument? </p>
-    <p>Ceylon doesn't
-have method overloading like Java does.
-But we <em>can</em> give parameters a default value.</p>
-    <pre class="code ceylon"><code data-language="ceylon">void hello(String name="world") {
-     print("Hello " + name);
- }
-</code></pre>
-    <p>then we can call it like this:</p>
-    <pre class="code ceylon"><code data-language="ceylon">// call site
-hello();
-hello("Tom");
-</code></pre>
-  </div>
-  <div id="null" class="step slide" data-x="6000" data-y="0" data-z="0">
+  <div id="null" class="step slide" data-x="2000" data-y="800" data-z="0">
     <h3>
       <code>String</code> means 'string'</h3>
     <p>I can't do this:</p>
@@ -116,13 +103,13 @@ It follows from the language assignability rules.</p>
       </li>
     </ul>
   </div>
-  <div id="null-safety" class="step slide" data-x="7500" data-y="0" data-z="0">
+  <div id="null-safety" class="step slide" data-x="3000" data-y="800" data-z="0">
     <h3>
       <code>String?</code>
     </h3>
     <p>What if I wanted to permit <code>hello()</code> to take a <code>null</code> argument?</p>
     <p>I would have to declare it slightly differently:</p>
-    <pre class="code ceylon"><code data-language="ceylon">void hello(String? name="world") {
+    <pre class="code ceylon"><code data-language="ceylon">void hello(String? name) {
     print("Hello " + name);// error
 }
 </code></pre>
@@ -132,7 +119,7 @@ It follows from the language assignability rules.</p>
 </code></pre>
     <p>But we've got that <em>new</em> error where we use <code>name</code>.</p>
   </div>
-  <div id="if-exists" class="step slide" data-x="9000" data-y="0" data-z="0">
+  <div id="if-exists" class="step slide" data-x="4000" data-y="800" data-z="0">
     <h3>
       <code>if(exists ...)</code>
     </h3>
@@ -143,17 +130,17 @@ It follows from the language assignability rules.</p>
 to distinguish the two
 cases:</li>
     </ul>
-    <pre class="code ceylon"><code data-language="ceylon">void hello(String? name="world") {
+    <pre class="code ceylon"><code data-language="ceylon">void hello(String? name) {
     if (exists name) {
          print("Hello " + name);
     } else {
-         print("Hello, whoever you are");
+         print("Hello world");
     }
 }
 </code></pre>
     <ul>
       <li>
-        <p>The <code>if (exists ...</code> construct is a combined
+        <p>The <code>if (exists ...)</code> construct is a combined
 typecheck-and-downcast in one).</p>
       </li>
       <li>
@@ -161,7 +148,7 @@ typecheck-and-downcast in one).</p>
       </li>
     </ul>
   </div>
-  <div id="switch" class="step slide" data-x="10500" data-y="0" data-z="0">
+  <div id="switch" class="step slide" data-x="5000" data-y="800" data-z="0">
     <h3>
       <code>switch</code>
     </h3>
@@ -185,16 +172,16 @@ case from the <code>Null</code> case.</li>
       </li>
     </ul>
   </div>
-  <div id="flow-typing" class="step slide" data-x="12000" data-y="0" data-z="0">
+  <div id="flow-typing" class="step slide" data-x="6000" data-y="800" data-z="0">
     <h3>Flow typing</h3>
     <ul>
       <li>
-        <p>Outside the if or swith <code>name</code> is a <code>String?</code>
+        <p>Outside the <code>if</code> or <code>case</code> the value <code>name</code> is a <code>String?</code>
         </p>
       </li>
       <li>
         <p>But within the block guarded by the <code>if (exists ...)</code>
-or <code>switch (is ...)</code> the compiler treats the
+or <code>case(is ...)</code> the compiler treats the
 <code>name</code> value as having the narrower type <code>String</code>.</p>
       </li>
     </ul>
@@ -208,11 +195,11 @@ if (exists name) {
     <ul>
       <li>
         <p>This synergy of control flow and
-type narrowing is called <strong>flow typing</strong>.</p>
+type narrowing is called <em>flow typing</em>.</p>
       </li>
     </ul>
   </div>
-  <div id="union1" class="step slide" data-x="13500" data-y="0" data-z="0">
+  <div id="union1" class="step slide" data-x="7000" data-y="800" data-z="0">
     <h3>
       <code>?</code> was just sugar</h3>
     <p>This <code>String?</code> type is just syntax sugar. It means</p>
@@ -225,18 +212,35 @@ type narrowing is called <strong>flow typing</strong>.</p>
       </li>
       <li>
         <p>It lets us list a bunch of cases.
-We can use other types with <code>|</code>.</p>
+We can use arbitrary other types with <code>|</code>.</p>
       </li>
     </ul>
-    <pre class="code ceylon"><code data-language="ceylon">String|Integer
+    <pre class="code ceylon"><code data-language="ceylon">String|Integer|Boolean
 </code></pre>
-    <p>just means "String or Integer". </p>
+    <p>just means "<code>String</code> or <code>Integer</code> or <code>Boolean</code>". </p>
     <ul>
       <li>We can still use <code>if</code> or <code>switch</code> to distinguish the cases.</li>
-      <li>We call these types <strong>union types</strong>.</li>
+      <li>We call these types <em>union types</em>.</li>
     </ul>
   </div>
-  <div id="hof" class="step slide" data-x="15000" data-y="0" data-z="0">
+  <div id="defaulted-parameters" class="step slide" data-x="8000" data-y="800" data-z="0">
+    <h3>Defaulted parameters</h3>
+    <p>What if we want to be able to call <code>hello</code>
+without passing an argument? </p>
+    <p>Ceylon doesn't
+have method overloading like Java does.
+But we <em>can</em> give parameters a default value.</p>
+    <pre class="code ceylon"><code data-language="ceylon">void hello(String name="world") {
+     print("Hello " + name);
+ }
+</code></pre>
+    <p>then we can call it like this:</p>
+    <pre class="code ceylon"><code data-language="ceylon">// call site
+hello();
+hello("Tom");
+</code></pre>
+  </div>
+  <div id="hof" class="step slide" data-x="9000" data-y="800" data-z="0">
     <h3>Abstrating away <code>print()</code>
     </h3>
     <p>
@@ -246,7 +250,7 @@ we're writing to standard output (by using <code>print</code>). </p>
 want to abstract away where we're sending the
 greeting.</p>
   </div>
-  <div id="hof2" class="step slide" data-x="16500" data-y="0" data-z="0">
+  <div id="hof2" class="step slide" data-x="10000" data-y="800" data-z="0">
     <h3>Types of functions</h3>
     <ul>
       <li>
@@ -267,7 +271,7 @@ The type of such a function is</p>
 function returns).</p>
     <p>This is an example of the <code>Callable</code> type.</p>
   </div>
-  <div id="hof3" class="step slide" data-x="18000" data-y="0" data-z="0">
+  <div id="hof3" class="step slide" data-x="11000" data-y="800" data-z="0">
     <h3>Function references</h3>
     <p>Let's add a parameter for that:</p>
     <pre class="code ceylon"><code data-language="ceylon">void hello(String name, 
@@ -283,7 +287,7 @@ At a call site I have to pass a function:</p>
       <code>print</code> (without parentheses) is just a reference to the
 <code>print()</code> function.</p>
   </div>
-  <div id="hof4" class="step slide" data-x="19500" data-y="0" data-z="0">
+  <div id="hof4" class="step slide" data-x="12000" data-y="800" data-z="0">
     <h3>Function references</h3>
     <p>With this abstraction I can print to a file, or a
 socket or whatever:</p>
@@ -293,10 +297,10 @@ hello("Tom", stringBuilder.append);
 // etc.
 </code></pre>
   </div>
-  <div id="iterable" class="step slide" data-x="21000" data-y="0" data-z="0">
+  <div id="iterable" class="step slide" data-x="13000" data-y="800" data-z="0">
     <h3>Iteration</h3>
     <p>What if I want to greet several people? </p>
-    <p>I need <code>name</code> to become <code>names</code>, and I need to
+    <p>I need <code>names</code> rather than a single <code>name</code>, and I need to
 be able to iterate it:</p>
     <pre class="code ceylon"><code data-language="ceylon">void helloAll(void emit(String str), 
               {String*} names) {
@@ -312,7 +316,7 @@ be able to iterate it:</p>
 meaning "<code>Iterable</code> of one or more <code>String</code>s").</li>
     </ul>
   </div>
-  <div id="inference" class="step slide" data-x="22500" data-y="0" data-z="0">
+  <div id="inference" class="step slide" data-x="14000" data-y="800" data-z="0">
     <h3>Look, no types!</h3>
     <p>Note that I didn't need to explicitly declare the type of
 <code>name</code> in that <code>for</code> statement.</p>
@@ -321,7 +325,7 @@ meaning "<code>Iterable</code> of one or more <code>String</code>s").</li>
     <p>The compiler looks on the right hand side (at <code>names</code>), sees an
 <code>Iterable&lt;String></code> so infers that <code>name</code> must be a <code>String</code>.</p>
   </div>
-  <div id="inference2" class="step slide" data-x="24000" data-y="0" data-z="0">
+  <div id="inference2" class="step slide" data-x="15000" data-y="800" data-z="0">
     <h3>Type inference</h3>
     <p>In fact the compiler can figure out the type of
 a declaration from an expression for local
@@ -339,11 +343,11 @@ keyword where we  would have to write a type.</p>
 most specific type (by looking at the assigned expression).</p>
       </li>
       <li>
-        <p>This is called <strong>type inference</strong>.</p>
+        <p>This is called <em>type inference</em>.</p>
       </li>
     </ul>
   </div>
-  <div id="iterable-literals" class="step slide" data-x="25500" data-y="0" data-z="0">
+  <div id="iterable-literals" class="step slide" data-x="16000" data-y="800" data-z="0">
     <h3>Iterable literals</h3>
     <ul>
       <li>How might I call <code>helloAll()</code>?</li>
@@ -363,7 +367,7 @@ helloAll(names);
       </li>
     </ul>
   </div>
-  <div id="tuple-literals" class="step slide" data-x="27000" data-y="0" data-z="0">
+  <div id="tuple-literals" class="step slide" data-x="17000" data-y="800" data-z="0">
     <h3>Tuple literals</h3>
     <p>Alternatively I could use a <code>Tuple</code> to call <code>helloAll()</code>
 (<code>Tuple</code> inherits <code>Iterable</code>):</p>
@@ -378,9 +382,13 @@ helloAll(names);
         <p>A <code>Tuple</code> knows the type of each of its elements (so I can have
 <code>[String, Integer, Boolean]</code> for example).</p>
       </li>
+      <li>
+        <p>A <code>[String, Integer, Boolean]</code> is a <code>{String|Integer|Boolean+}</code>
+        </p>
+      </li>
     </ul>
   </div>
-  <div id="comprehension" class="step slide" data-x="28500" data-y="0" data-z="0">
+  <div id="comprehension" class="step slide" data-x="18000" data-y="800" data-z="0">
     <h3>Comprehension</h3>
     <p>A comprehension lets me create an iterable or tuple by filtering,
 mapping and combining other iterables.</p>
@@ -392,7 +400,7 @@ mapping and combining other iterables.</p>
 </code></pre>
     <ul>
       <li>
-        <p>Rather than listing elements in the iterable or tuple literal I use <code>for</code>,</p>
+        <p>Rather than listing elements in the iterable or tuple literal I use <code>for</code> within the brackets,</p>
       </li>
       <li>
         <p>the <code>if</code> filters out the non-<code>Dog</code>s,</p>
@@ -408,15 +416,16 @@ mapping and combining other iterables.</p>
       </li>
     </ul>
   </div>
-  <div id="class" class="step slide" data-x="30000" data-y="0" data-z="0">
+  <div id="class" class="step slide" data-x="19000" data-y="800" data-z="0">
     <h3>A class</h3>
     <p>Let's use a class to say more than just "hello":</p>
     <pre class="code ceylon"><code data-language="ceylon">class Greeter(void emit(String str)) {
+    value greeting = "Hello";
+    value parting = "Cheerio";
     shared void hello(String name) {
-        emit("Hello " + name);
+        emit("``greeting`` ``name``");
     }
-    shared void bye(String name) {
-        emit("Cheerio " + name);
+    shared void bye(String name) { /* ... */ }
     }
 }
 </code></pre>
@@ -428,13 +437,12 @@ mapping and combining other iterables.</p>
         <p>I can use <code>emit</code> because it is in an outer scope of <code>hello</code>.</p>
       </li>
       <li>
-        <p>
-          <code>shared</code> allows the method to be called from outside
-<code>Greeter</code>.</p>
+        <p>As before, <code>shared</code> allows the methods to be visible outside their container
+(<code>Greeter</code> in this case).</p>
       </li>
     </ul>
   </div>
-  <div id="" class="step slide" data-x="31500" data-y="0" data-z="0">
+  <div id="" class="step slide" data-x="20000" data-y="800" data-z="0">
     <h3>Instantiation and invocation</h3>
     <p>I instantiate the class just by invoking it
 (no need for <code>new</code>). </p>
@@ -448,7 +456,7 @@ mapping and combining other iterables.</p>
 </code></pre>
     <p>Note: each name binding ends with a <code>;</code>.</p>
   </div>
-  <div id="named-arguments" class="step slide" data-x="33000" data-y="0" data-z="0">
+  <div id="named-arguments" class="step slide" data-x="21000" data-y="800" data-z="0">
     <h3>Named arguments</h3>
     <p>With named argument invocation there's some flexibility
 in how I pass <code>Iterable</code> arguments.
@@ -464,18 +472,20 @@ I can list them:</p>
 };
 </code></pre>
   </div>
-  <div id="enough" class="step slide" data-x="34500" data-y="0" data-z="0">
+  <div id="enough" class="step slide" data-x="22000" data-y="800" data-z="0">
     <h3>Just enough</h3>
-    <p>There's a lot more to Ceylon than just the language, so now
-you're going to see some of the SDK, IDE and CLI tools.</p>
     <p>We've covered enough of the language that you should be able
 to understand <em>most</em> of the code you're going to see.</p>
+    <p>If you want to know more about the language, check out
+the 'Tour of Ceylon' (<a href="http://ceylon-lang.org/documentation/current/tour/">http://ceylon-lang.org/documentation/current/tour</a>)</p>
+    <p>But there's a lot more to Ceylon than just the language, so now
+you're going to see some of the SDK, IDE and CLI tools.</p>
   </div>
-  <div id="part-2" class="step slide" data-x="36000" data-y="0" data-z="0">
-    <h2>A microservice using <code>ceylon.http.server</code>
-    </h2>
+  <div id="part-2" class="step slide" data-x="0" data-y="1600">
+    <h2>A microservice using <code>ceylon.http.server</code> </h2>
+    <h3>(in Eclipse)</h3>
   </div>
-  <div id="number-api" class="step slide" data-x="37500" data-y="0" data-z="0">
+  <div id="number-api" class="step slide" data-x="1000" data-y="1600" data-z="0">
     <h3>A number service</h3>
     <ul>
       <li>
@@ -493,11 +503,8 @@ a random number generator.</p>
 between <code>min</code> and <code>max</code> (inclusive).</p>
       </li>
     </ul>
-    <p>
-      <a href="http://localhost:8081/numbers/number?min=0&amp;max=10">http://localhost:8081/numbers/number?min=0&amp;max=10</a>
-    </p>
   </div>
-  <div class="step slide" data-x="39000" data-y="0" data-z="0">
+  <div class="step slide" data-x="2000" data-y="1600" data-z="0">
     <h3>Implementation</h3>
     <ul>
       <li>
@@ -505,14 +512,18 @@ between <code>min</code> and <code>max</code> (inclusive).</p>
       </li>
       <li>
         <p>
-          <code>ceylon.http.server</code> uses undertow and xnio under the covers</p>
+          <code>ceylon.http.server</code> uses undertow and xnio (from the JBoss
+project) under the covers</p>
+      </li>
+      <li>
+        <p>So we benefit from all their engineering efforts "for free"</p>
       </li>
     </ul>
   </div>
-  <div class="step slide" data-x="40500" data-y="0" data-z="0">
+  <div class="step slide" data-x="3000" data-y="1600" data-z="0">
     <h3>Demo</h3>
   </div>
-  <div class="step slide" data-x="42000" data-y="0" data-z="0">
+  <div class="step slide" data-x="4000" data-y="1600" data-z="0">
     <h3>Critique</h3>
     <p>Criticisms of the number service:</p>
     <ul>
@@ -529,10 +540,21 @@ serialization problem</p>
       </li>
     </ul>
   </div>
-  <div id="part-3" class="step slide" data-x="43500" data-y="0" data-z="0">
-    <h2>A microservice using Vert.x</h2>
+  <div id="part-3" class="step slide" data-x="0" data-y="2400">
+    <h2>Two microservices using Vert.x </h2>
+    <h3>(on the command line)</h3>
   </div>
-  <div id="what-is-vertx" class="step slide" data-x="45000" data-y="0" data-z="0">
+  <div id="adjectives" class="step slide" data-x="1000" data-y="2400" data-z="0">
+    <h3>An adjective server</h3>
+    <p>We're going to see a microservice which returns adjectives
+(e.g. "awesome")
+or adverbs (e.g. "awesomly") chosen randomly from a
+hardcoded list.</p>
+    <p>It will be a client of the random number service.</p>
+    <p>Using the Vert.x core
+API instead of <code>ceylon.http.server</code>.</p>
+  </div>
+  <div id="what-is-vertx" class="step slide" data-x="2000" data-y="2400" data-z="0">
     <h3>What is Vert.x?</h3>
     <p>
       <a href="http://vertx.io">Vert.x</a>
@@ -558,23 +580,13 @@ is a toolkit for building <em>reactive</em> applications on the JVM.</p>
       </li>
     </ul>
   </div>
-  <div id="adjectives" class="step slide" data-x="46500" data-y="0" data-z="0">
-    <h3>An adjective server</h3>
-    <p>We're going to see a microservice which returns adjectives
-(e.g. "awesome")
-or adverbs (e.g. "awesomly") chosen randomly from a
-hardcoded list.</p>
-    <p>It will be a client of the random number service.</p>
-    <p>Very similar architecture as number server, but using the vertx core
-API instead of <code>ceylon.http.server</code>.</p>
-  </div>
-  <div class="step slide" data-x="48000" data-y="0" data-z="0">
+  <div class="step slide" data-x="3000" data-y="2400" data-z="0">
     <h3>Demo</h3>
   </div>
-  <div class="step slide" data-x="49500" data-y="0" data-z="0">
-    <h3>Critique</h3>
+  <div class="step slide" data-x="4000" data-y="2400" data-z="0">
+    <h3>Critique of Vert.x core</h3>
     <ul>
-      <li>Using the vertex core API is still quite low-level. 
+      <li>Using the Vert.x core API is still quite low-level. 
 It doesn't do any of the following:<ul>
           <li>Routing &amp; path matching</li>
           <li>Cookies, sessions</li>
@@ -587,55 +599,50 @@ It doesn't do any of the following:<ul>
       <li>On the other hand, it reactive, non-blocking should scale well</li>
     </ul>
   </div>
-  <div id="verbs" class="step slide" data-x="51000" data-y="0" data-z="0">
+  <div id="verbs" class="step slide" data-x="5000" data-y="2400" data-z="0">
     <h3>A verb server</h3>
     <p>We're going to write a microservice which returns verbs chosen
 randomly from a hardcoded list.</p>
     <p>It will also be a client of the random number service.</p>
-    <p>We'll do this using vertx web, which is a higher level API built
-on top of vertx core.</p>
+    <p>We'll do this using Vert.x web, which is a higher level API built
+on top of Vert.x core.</p>
   </div>
-  <div class="step slide" data-x="52500" data-y="0" data-z="0">
+  <div class="step slide" data-x="6000" data-y="2400" data-z="0">
     <h3>Demo</h3>
   </div>
-  <div class="step slide" data-x="54000" data-y="0" data-z="0">
-    <h3>Critique</h3>
+  <div class="step slide" data-x="7000" data-y="2400" data-z="0">
+    <h3>Critique of Vert.x web</h3>
     <ul>
       <li>
-        <p>Lots more features to play with (e.g. routing etc), and</p>
+        <p>Lots more features to play with
+(e.g. routing, authentication, uploads etc), and</p>
       </li>
       <li>
-        <p>a serialization library made life simpler,</p>
-      </li>
-      <li>
-        <p>but again the callback-based approach won't suit everyone</p>
+        <p>a serialization library made life simpler</p>
       </li>
     </ul>
   </div>
-  <div id="part-4" class="step slide" data-x="55500" data-y="0" data-z="0">
-    <h2>A microservice using gyokuro</h2>
+  <div id="part-4" class="step slide" data-x="0" data-y="3200">
+    <h2>A microservice using gyokuro </h2>
+    <h3>(in IntelliJ)</h3>
   </div>
-  <div class="step slide" data-x="57000" data-y="0" data-z="0">
+  <div class="step slide" data-x="1000" data-y="3200" data-z="0">
     <h3>A Rendering Service</h3>
     <p>We're going to look at another (final, phew!) microservice
 which renders templates by inserting verbs and adjectives,
 returning a list of phrases/sentences.</p>
     <p>It will be a client of all three other services.</p>
-    <p>It is implemented using gyokuro (which is built on top
-of <code>ceylon.http.server</code>).</p>
   </div>
-  <div class="step slide" data-x="58500" data-y="0" data-z="0">
-    <h3>Demo</h3>
-  </div>
-  <div class="step slide" data-x="60000" data-y="0" data-z="0">
-    <h3>Critique</h3>
+  <div class="step slide" data-x="2000" data-y="3200" data-z="0">
+    <h3>Implemented using gyokuro</h3>
     <ul>
-      <li>More traditional, Java-like, annotation-based approach</li>
-      <li>Framework supports 'transformers' (for serialization OOTB)</li>
-      <li>And support for popular templating libraries</li>
+      <li>The service will be implemented using <a href="http://bjansen.github.io/gyokuro/">gyokuro</a>
+(<code>com.github.bjansen.gyokuro.core</code>) </li>
+      <li>Gyokuro is built on top  of <code>ceylon.http.server</code>
+      </li>
     </ul>
   </div>
-  <div class="step slide" data-x="61500" data-y="0" data-z="0">
+  <div class="step slide" data-x="3000" data-y="3200" data-z="0">
     <h3>A Confession</h3>
     <p>So how is this </p>
     <blockquote>
@@ -643,19 +650,43 @@ of <code>ceylon.http.server</code>).</p>
     </blockquote>
     <p>Well, it could equally be</p>
     <blockquote>
-      <p>How Ceylon helped me lose 2kg in 3 weeks</p>
+      <p>I went to a presentation about Ceylon: you'll never guess
+what happened next...</p>
     </blockquote>
     <p>Or</p>
     <blockquote>
-      <p>3 things your husband doesn't want you to know about Ceylon</p>
+      <p>How coding in Ceylon will make you better in bed</p>
     </blockquote>
-    <p>Because we're building a click bait generator here.</p>
+    <p>Because <strong>we're building a click bait generator here</strong>.</p><small>
+So if you really were expecting to see the most incredible 
+Ceylon presentation ever, well, sorry!
+</small>
   </div>
-  <div id="part-5" class="step slide" data-x="63000" data-y="0" data-z="0">
-    <h2>An Android app</h2>
-    <p>*We've now seen several different ways to write microservices
-in Ceylon.</p>
+  <div class="step slide" data-x="4000" data-y="3200" data-z="0">
+    <h3>Demo</h3>
+  </div>
+  <div class="step slide" data-x="5000" data-y="3200" data-z="0">
+    <h3>Critique of gyokuro</h3>
     <ul>
+      <li>
+        <p>More traditional, Java-like, annotation-based approach</p>
+      </li>
+      <li>
+        <p>Framework supports 'transformers' (for serialization OOTB)</p>
+      </li>
+      <li>
+        <p>And support for popular templating libraries</p>
+      </li>
+    </ul>
+  </div>
+  <div id="part-5" class="step slide" data-x="0" data-y="4000">
+    <h2>An Android app </h2>
+    <h2>(in Android Studio)</h2>
+    <ul>
+      <li>
+        <p>We've now seen several different ways to write microservices
+in Ceylon.</p>
+      </li>
       <li>
         <p>Ceylon supports Android development from Ceylon 1.3.</p>
       </li>
@@ -664,7 +695,7 @@ in Ceylon.</p>
       </li>
     </ul>
   </div>
-  <div class="step slide" data-x="64500" data-y="0" data-z="0">
+  <div class="step slide" data-x="1000" data-y="4000" data-z="0">
     <h3>Aside: Cordova</h3>
     <ul>
       <li>
@@ -681,7 +712,7 @@ iOS and WindowsPhone as well as Android</p>
       </li>
     </ul>
   </div>
-  <div class="step slide" data-x="66000" data-y="0" data-z="0">
+  <div class="step slide" data-x="2000" data-y="4000" data-z="0">
     <h3>Native Android Development</h3>
     <p>How do you develop for Android using Ceylon?</p>
     <ul>
@@ -694,10 +725,10 @@ module's transitive dependencies into your app. </li>
 (avoiding lots of reflection) and it initialized at runtime.</li>
     </ul>
   </div>
-  <div class="step slide" data-x="67500" data-y="0" data-z="0">
+  <div class="step slide" data-x="3000" data-y="4000" data-z="0">
     <h3>Demo</h3>
   </div>
-  <div class="step slide" data-x="69000" data-y="0" data-z="0">
+  <div class="step slide" data-x="4000" data-y="4000" data-z="0">
     <h3>Future plans for Android development</h3>
     <p>In the next version of Ceylon we aim to improve Android interop:</p>
     <ul>
@@ -706,20 +737,22 @@ module's transitive dependencies into your app. </li>
       <li>maybe even some kind of DSL of the Android SDK</li>
     </ul>
   </div>
-  <div id="architecture" class="step slide" data-x="70500" data-y="0" data-z="0">
+  <div id="architecture" class="step slide" data-x="0" data-y="4800">
     <h3>What have we seen again?</h3>
     <img src="architecture.svg" width="780">
     <p>... using Eclipse, IntelliJ, Android Studio, the CLI</p>
   </div>
-  <div class="step slide" data-x="72000" data-y="0" data-z="0">
+  <div class="step slide" data-x="1000" data-y="4800" data-z="0">
     <h3>What haven't we seen?</h3>
     <p>There's <strong>loads</strong> of stuff I've not had time to talk about.
-Including (but not limited to): JS,
+Including (but not limited to): Ceylon JS,
 Mobile development with Cordova,
-the module system, the metamodel,
-interop with Java/JEE, the Herd,
-interop with TypeScript...</p>
-    <p>Check out</p>
+the module system, the Herd,
+the metamodel,
+serialization,
+interop with Java/JEE,
+ceylon dart, TypeScript...</p>
+    <p>If you're interested then check out</p>
     <ul>
       <li>
         <a href="http://ceylon-lang.org">http://ceylon-lang.org</a>
@@ -729,13 +762,39 @@ interop with TypeScript...</p>
       </li>
       <li>
         <a href="https://groups.google.com/group/ceylon-users">https://groups.google.com/group/ceylon-users</a>
-if you're interested!</li>
+      </li>
     </ul>
   </div>
-  <div id="fin" class="step slide" data-x="73500" data-y="0" data-z="0">
-    <h1>The End</h1>
-    <p>Questions?</p>
+  <div id="1.3" class="step slide" data-x="2000" data-y="4800" data-z="0">
+    <h3>Ceylon 1.3</h3>
+    <ul>
+      <li>
+        <p>These demos have been based on Ceylon 1.3.</p>
+      </li>
+      <li>
+        <p>Ceylon 1.3 should be out "next week"</p>
+      </li>
+      <li>
+        <p>So too will new versions of the Eclipse IDE</p>
+      </li>
+      <li>
+        <p>And the IntelliJ plugin
+Please tell us what you think!</p>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <a href="http://ceylon-lang.org">http://ceylon-lang.org</a>
+      </li>
+      <li>
+        <a href="https://gitter.im/ceylon/user">https://gitter.im/ceylon/user</a>
+      </li>
+      <li>
+        <a href="https://groups.google.com/group/ceylon-users">https://groups.google.com/group/ceylon-users</a>
+      </li>
+    </ul>
   </div>
+  <div id="overview" class="step slide" data-x="500" data-y="2400" data-z="7000" data-rotate-x="0" data-rotate-y="-35" data-rotate-z="0"></div>
 </div>
     <script src="js/impress.js"></script>
     <script src="js/rainbow-custom.min.js"></script>

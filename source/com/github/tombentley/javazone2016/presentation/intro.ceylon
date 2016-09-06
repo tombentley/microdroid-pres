@@ -6,10 +6,12 @@ import ceylon.html {
 import com.github.tombentley.deck {
     Slide,
     transitions,
-    Transition
+    Transition,
+    State
 }
 
 {Slide|Transition*} intro => {
+    (State state) => State(0, 0, 0),
     Slide{
         id="title";
         H2{"The most incredible Ceylon presentation you'll ever see"},

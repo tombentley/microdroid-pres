@@ -1,13 +1,19 @@
 import com.github.tombentley.deck {
     Slide,
-    Transition
+    Transition,
+    State,
+    transitions
 }
 
 {Slide|Transition*} part4 = [
+    (State state) => State(0, 3200),
     Slide{
         id="part-4";
-        """## A microservice using gyokuro"""
+        """## A microservice using gyokuro 
+           
+           ### (in IntelliJ)"""
     },
+    transitions.left,
     Slide {
         """### A Rendering Service
            
@@ -16,21 +22,14 @@ import com.github.tombentley.deck {
            returning a list of phrases/sentences.
            
            It will be a client of all three other services.
-           
-           It is implemented using gyokuro (which is built on top 
-           of `ceylon.http.server`).
-           """
-    },
-    Slide {
-        """### Demo"""
-    },
+        """},
     Slide{
-        """### Critique
+        """### Implemented using gyokuro
            
-           * More traditional, Java-like, annotation-based approach
-           * Framework supports 'transformers' (for serialization OOTB)
-           * And support for popular templating libraries
-           """
+           * The service will be implemented using [gyokuro](http://bjansen.github.io/gyokuro/)
+             (`com.github.bjansen.gyokuro.core`) 
+           * Gyokuro is built on top  of `ceylon.http.server`
+        """
     },
     Slide {
         """### A Confession
@@ -41,14 +40,30 @@ import com.github.tombentley.deck {
            
            Well, it could equally be
            
-           > How Ceylon helped me lose 2kg in 3 weeks
+           > I went to a presentation about Ceylon: you'll never guess 
+           > what happened next...
            
            Or
            
-           > 3 things your husband doesn't want you to know about Ceylon
+           > How coding in Ceylon will make you better in bed
            
-           Because we're building a click bait generator here.
+           Because **we're building a click bait generator here**.
            
-           """
+           <small>
+           So if you really were expecting to see the most incredible 
+           Ceylon presentation ever, well, sorry!
+           </small>
+        """
+    },
+    Slide {
+        """### Demo"""
+    },
+    Slide{
+        """### Critique of gyokuro
+           
+           * More traditional, Java-like, annotation-based approach
+           * Framework supports 'transformers' (for serialization OOTB)
+           * And support for popular templating libraries
+        """
     }
 ];
