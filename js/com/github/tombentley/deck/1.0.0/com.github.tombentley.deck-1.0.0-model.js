@@ -1,0 +1,1 @@
+/home/tom/workspace/javazone-presentation/modules/com/github/tombentley/deck/1.0.0/com.github.tombentley.deck-1.0.0-model.js

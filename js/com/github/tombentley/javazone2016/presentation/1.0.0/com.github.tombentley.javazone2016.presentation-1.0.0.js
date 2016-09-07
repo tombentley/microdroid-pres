@@ -1,0 +1,1 @@
+/home/tom/workspace/javazone-presentation/modules/com/github/tombentley/javazone2016/presentation/1.0.0/com.github.tombentley.javazone2016.presentation-1.0.0.js

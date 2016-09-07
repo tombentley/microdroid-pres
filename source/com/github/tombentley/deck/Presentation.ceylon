@@ -32,57 +32,18 @@ shared class Presentation(
         }
     }
     
-    shared void render(Anything(String) p=process.write) {
-        p("<!doctype html>
-             <html lang='en'>
-               <head>
-                  <meta charset='utf-8' />
-                  <meta name='viewport' content='width=1024' />
-                  <meta name='apple-mobile-web-app-capable' content='yes' />
-                  <title>``title``</title>
-                  
-                  <meta name='description' content='``description``' />
-                  <meta name='author' content='``author``' />
-                  
-                  <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet'>
-                  
-                  <link href='css/presentation.css' rel='stylesheet' />
-                  <link href='css/paraiso-dark.css' rel='stylesheet' type='text/css'>
-             
-                  <link rel='shortcut icon' href='favicon.png' />
-                  <!--<link rel='apple-touch-icon' href='apple-touch-icon.png' />-->
-                </head>
-                <body class='impress-not-supported'>
-                 
-                 <div class='fallback-message'>
-                   <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
-                   <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
-                 </div>
-                 ");
-        
-        
+    shared String rendered {
+        StringBuilder p = StringBuilder();
         variable value state = State();
         renderTemplate {
-            write = p; 
+            write = p.append; 
             node = Div{
                 id="impress";
                 for (transition->slide in prepped) slide.render(state = transition(state))
             };
         };
-        
-        p("""    <script src="js/impress.js"></script>
-                 <script src="js/rainbow-custom.min.js"></script>
-                 <script src="js/language/ceylon.js"></script>
-                 <script>
-                   Rainbow.defer = true;
-                   document.addEventListener("DOMContentLoaded", function(event) {
-                     Rainbow.color();
-                     var i =  impress();
-                     i.init();
-                   });
-                 </script>
-               </body>
-             </html>""");
+        return p.string;
+   
     }
 }
 
