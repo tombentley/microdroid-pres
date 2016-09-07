@@ -14,7 +14,7 @@ import ceylon.html {
         id="part-3";
         """## Two microservices using Vert.x 
            
-           ### (on the command line)"""
+           * Demo on the command line"""
     },
     transitions.left,
     Slide{
@@ -38,7 +38,7 @@ import ceylon.html {
            [Vert.x](http://vertx.io)
            is a toolkit for building *reactive* applications on the JVM.
            
-           * Polyglot (Java, JavaSript, Ruby, Groovy and Ceylon)
+           * Polyglot (Ceylon plus some niche languages: Java, JavaSript, Ruby & Groovy)
            * Modular building blocks, not an app server
            * Event driven
            * Using multiple event loops to dispatch events

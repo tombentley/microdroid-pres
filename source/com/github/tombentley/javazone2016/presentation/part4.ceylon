@@ -11,7 +11,7 @@ import com.github.tombentley.deck {
         id="part-4";
         """## A microservice using gyokuro 
            
-           ### (in IntelliJ)"""
+           * Demo in IntelliJ"""
     },
     transitions.left,
     Slide {

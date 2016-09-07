@@ -47,6 +47,14 @@ Java and JavaScript virtual machines,</li>
   </div>
   <div class="step slide" data-x="0" data-y="800">
     <h2>A lightning tour of the language</h2>
+    <ul>
+      <li>
+        <p>Enough of the language to understand the demos.</p>
+      </li>
+      <li>
+        <p>15 minutes (or so).</p>
+      </li>
+    </ul>
   </div>
   <div id="hello" class="step slide" data-x="1000" data-y="800" data-z="0">
     <h3>
@@ -54,7 +62,7 @@ Java and JavaScript virtual machines,</li>
     </h3>
     <p>Let's start with hello world:</p>
     <pre class="code ceylon"><code data-language="ceylon">shared void hello(String name) {
-    print("Hello " + name);
+    print("Hello ``name``");
 }
 </code></pre>
     <ul>
@@ -73,7 +81,7 @@ the Ceylon language module (<code>ceylon.language</code>) that prints
 to standard output.</p>
       </li>
       <li>
-        <p>We can concatenate Strings using <code>+</code>.</p>
+        <p>Double backticks in a string literal is interpolation.</p>
       </li>
     </ul>
   </div>
@@ -110,7 +118,7 @@ It follows from the language assignability rules.</p>
     <p>What if I wanted to permit <code>hello()</code> to take a <code>null</code> argument?</p>
     <p>I would have to declare it slightly differently:</p>
     <pre class="code ceylon"><code data-language="ceylon">void hello(String? name) {
-    print("Hello " + name);// error
+    print("Hello ``name``");// error
 }
 </code></pre>
     <p>The <code>String?</code> parameter type means "<code>String</code> or null".</p>
@@ -132,7 +140,7 @@ cases:</li>
     </ul>
     <pre class="code ceylon"><code data-language="ceylon">void hello(String? name) {
     if (exists name) {
-         print("Hello " + name);
+         print("Hello ``name``");
     } else {
          print("Hello world");
     }
@@ -154,12 +162,12 @@ typecheck-and-downcast in one).</p>
     </h3>
     <p>Another way to do the same thing is using <code>switch</code>
     </p>
-    <pre class="code ceylon"><code data-language="ceylon">void hello(String? name="world") {
+    <pre class="code ceylon"><code data-language="ceylon">void hello(String? name) {
     switch(name)
     case (is String) {
-        print("Hello " + name);
+        print("Hello ``name``");
     } else {
-        print("Hello, whoever you are");
+        print("Hello world");
     }
 }
 </code></pre>
@@ -186,10 +194,10 @@ or <code>case(is ...)</code> the compiler treats the
       </li>
     </ul>
     <pre class="code ceylon"><code data-language="ceylon">// outside if block name has type String?
-// (so "Hello "+name is a compile error)
+// (so "Hello ``name``" is a compile error)
 if (exists name) {
      // inside block name has type String
-     // (so "Hello "+name is allowed)
+     // (so "Hello ``name``" is allowed)
 }
 </code></pre>
     <ul>
@@ -231,7 +239,7 @@ without passing an argument? </p>
 have method overloading like Java does.
 But we <em>can</em> give parameters a default value.</p>
     <pre class="code ceylon"><code data-language="ceylon">void hello(String name="world") {
-     print("Hello " + name);
+     print("Hello ``name``");
  }
 </code></pre>
     <p>then we can call it like this:</p>
@@ -272,11 +280,11 @@ function returns).</p>
     <p>This is an example of the <code>Callable</code> type.</p>
   </div>
   <div id="hof3" class="step slide" data-x="11000" data-y="800" data-z="0">
-    <h3>Function references</h3>
+    <h3>Callables &amp; function references</h3>
     <p>Let's add a parameter for that:</p>
     <pre class="code ceylon"><code data-language="ceylon">void hello(String name, 
            Anything(String) emit) {
-    emit("Hello " + name);
+    emit("Hello ``name``");
 }
 </code></pre>
     <p>I invoke the function <code>emit</code> by adding an argument list.
@@ -288,6 +296,18 @@ At a call site I have to pass a function:</p>
 <code>print()</code> function.</p>
   </div>
   <div id="hof4" class="step slide" data-x="12000" data-y="800" data-z="0">
+    <h3>Function parameters</h3>
+    <p>Alternatively instead of declaring <code>emit</code> as a
+<code>Callable</code>-type value parameter,
+I can declare <code>emit</code> as a function parameter:</p>
+    <pre class="code ceylon"><code data-language="ceylon">void hello(String name, 
+           void emit(String str)) {
+    emit("Hello ``name``");
+}
+</code></pre>
+    <p>It means (almost) exactly the same thing.</p>
+  </div>
+  <div id="hof5" class="step slide" data-x="13000" data-y="800" data-z="0">
     <h3>Function references</h3>
     <p>With this abstraction I can print to a file, or a
 socket or whatever:</p>
@@ -297,7 +317,7 @@ hello("Tom", stringBuilder.append);
 // etc.
 </code></pre>
   </div>
-  <div id="iterable" class="step slide" data-x="13000" data-y="800" data-z="0">
+  <div id="iterable" class="step slide" data-x="14000" data-y="800" data-z="0">
     <h3>Iteration</h3>
     <p>What if I want to greet several people? </p>
     <p>I need <code>names</code> rather than a single <code>name</code>, and I need to
@@ -316,7 +336,7 @@ be able to iterate it:</p>
 meaning "<code>Iterable</code> of one or more <code>String</code>s").</li>
     </ul>
   </div>
-  <div id="inference" class="step slide" data-x="14000" data-y="800" data-z="0">
+  <div id="inference" class="step slide" data-x="15000" data-y="800" data-z="0">
     <h3>Look, no types!</h3>
     <p>Note that I didn't need to explicitly declare the type of
 <code>name</code> in that <code>for</code> statement.</p>
@@ -325,7 +345,7 @@ meaning "<code>Iterable</code> of one or more <code>String</code>s").</li>
     <p>The compiler looks on the right hand side (at <code>names</code>), sees an
 <code>Iterable&lt;String></code> so infers that <code>name</code> must be a <code>String</code>.</p>
   </div>
-  <div id="inference2" class="step slide" data-x="15000" data-y="800" data-z="0">
+  <div id="inference2" class="step slide" data-x="16000" data-y="800" data-z="0">
     <h3>Type inference</h3>
     <p>In fact the compiler can figure out the type of
 a declaration from an expression for local
@@ -347,7 +367,7 @@ most specific type (by looking at the assigned expression).</p>
       </li>
     </ul>
   </div>
-  <div id="iterable-literals" class="step slide" data-x="16000" data-y="800" data-z="0">
+  <div id="iterable-literals" class="step slide" data-x="17000" data-y="800" data-z="0">
     <h3>Iterable literals</h3>
     <ul>
       <li>How might I call <code>helloAll()</code>?</li>
@@ -367,7 +387,7 @@ helloAll(names);
       </li>
     </ul>
   </div>
-  <div id="tuple-literals" class="step slide" data-x="17000" data-y="800" data-z="0">
+  <div id="tuple-literals" class="step slide" data-x="18000" data-y="800" data-z="0">
     <h3>Tuple literals</h3>
     <p>Alternatively I could use a <code>Tuple</code> to call <code>helloAll()</code>
 (<code>Tuple</code> inherits <code>Iterable</code>):</p>
@@ -388,7 +408,7 @@ helloAll(names);
       </li>
     </ul>
   </div>
-  <div id="comprehension" class="step slide" data-x="18000" data-y="800" data-z="0">
+  <div id="comprehension" class="step slide" data-x="19000" data-y="800" data-z="0">
     <h3>Comprehension</h3>
     <p>A comprehension lets me create an iterable or tuple by filtering,
 mapping and combining other iterables.</p>
@@ -416,7 +436,7 @@ mapping and combining other iterables.</p>
       </li>
     </ul>
   </div>
-  <div id="class" class="step slide" data-x="19000" data-y="800" data-z="0">
+  <div id="class" class="step slide" data-x="20000" data-y="800" data-z="0">
     <h3>A class</h3>
     <p>Let's use a class to say more than just "hello":</p>
     <pre class="code ceylon"><code data-language="ceylon">class Greeter(void emit(String str)) {
@@ -442,7 +462,7 @@ mapping and combining other iterables.</p>
       </li>
     </ul>
   </div>
-  <div id="" class="step slide" data-x="20000" data-y="800" data-z="0">
+  <div id="" class="step slide" data-x="21000" data-y="800" data-z="0">
     <h3>Instantiation and invocation</h3>
     <p>I instantiate the class just by invoking it
 (no need for <code>new</code>). </p>
@@ -456,7 +476,7 @@ mapping and combining other iterables.</p>
 </code></pre>
     <p>Note: each name binding ends with a <code>;</code>.</p>
   </div>
-  <div id="named-arguments" class="step slide" data-x="21000" data-y="800" data-z="0">
+  <div id="named-arguments" class="step slide" data-x="22000" data-y="800" data-z="0">
     <h3>Named arguments</h3>
     <p>With named argument invocation there's some flexibility
 in how I pass <code>Iterable</code> arguments.
@@ -472,14 +492,15 @@ I can list them:</p>
 };
 </code></pre>
   </div>
-  <div id="enough" class="step slide" data-x="22000" data-y="800" data-z="0">
+  <div id="enough" class="step slide" data-x="23000" data-y="800" data-z="0">
     <h3>Just enough</h3>
     <p>We've covered enough of the language that you should be able
 to understand <em>most</em> of the code you're going to see.</p>
     <p>If you want to know more about the language, check out
 the 'Tour of Ceylon' (<a href="http://ceylon-lang.org/documentation/current/tour/">http://ceylon-lang.org/documentation/current/tour</a>)</p>
-    <p>But there's a lot more to Ceylon than just the language, so now
-you're going to see some of the SDK, IDE and CLI tools.</p>
+    <p>We are now
+going to see some real Ceylon code, using Eclipse,
+IntelliJ and the CLI tools.</p>
   </div>
   <div id="part-2" class="step slide" data-x="0" data-y="1600">
     <h2>A microservice using <code>ceylon.http.server</code> </h2>
@@ -561,7 +582,7 @@ API instead of <code>ceylon.http.server</code>.</p>
 is a toolkit for building <em>reactive</em> applications on the JVM.</p>
     <ul>
       <li>
-        <p>Polyglot (Java, JavaSript, Ruby, Groovy and Ceylon)</p>
+        <p>Polyglot (Ceylon plus some niche languages: Java, JavaSript, Ruby &amp; Groovy)</p>
       </li>
       <li>
         <p>Modular building blocks, not an app server</p>
@@ -721,7 +742,7 @@ iOS and WindowsPhone as well as Android</p>
 used by Android Studio</li>
       <li>and transparently packages the Ceylon runtime and all your
 module's transitive dependencies into your app. </li>
-      <li>The ceylon metamodel is suppored statically,
+      <li>The ceylon metamodel is supported statically,
 (avoiding lots of reflection) and it initialized at runtime.</li>
     </ul>
   </div>
@@ -732,9 +753,15 @@ module's transitive dependencies into your app. </li>
     <h3>Future plans for Android development</h3>
     <p>In the next version of Ceylon we aim to improve Android interop:</p>
     <ul>
-      <li>SAM-type conversion,</li>
-      <li>CharSequence conversion,</li>
-      <li>maybe even some kind of DSL of the Android SDK</li>
+      <li>
+        <p>SAM-type conversion,</p>
+      </li>
+      <li>
+        <p>CharSequence conversion,</p>
+      </li>
+      <li>
+        <p>maybe even some kind of DSL of the Android SDK</p>
+      </li>
     </ul>
   </div>
   <div id="architecture" class="step slide" data-x="0" data-y="4800">
@@ -745,13 +772,14 @@ module's transitive dependencies into your app. </li>
   <div class="step slide" data-x="1000" data-y="4800" data-z="0">
     <h3>What haven't we seen?</h3>
     <p>There's <strong>loads</strong> of stuff I've not had time to talk about.
-Including (but not limited to): Ceylon JS,
-Mobile development with Cordova,
+Including (but not limited to): Ceylon JS
+to leverage Cordova for mobile development,
 the module system, the Herd,
 the metamodel,
 serialization,
+Using Maven and NPM repositories,
 interop with Java/JEE,
-ceylon dart, TypeScript...</p>
+Ceylon Dart, TypeScript...</p>
     <p>If you're interested then check out</p>
     <ul>
       <li>
@@ -778,19 +806,25 @@ ceylon dart, TypeScript...</p>
         <p>So too will new versions of the Eclipse IDE</p>
       </li>
       <li>
-        <p>And the IntelliJ plugin
-Please tell us what you think!</p>
+        <p>And the IntelliJ plugin</p>
       </li>
     </ul>
+    <p>Please tell us what you think!</p>
     <ul>
       <li>
-        <a href="http://ceylon-lang.org">http://ceylon-lang.org</a>
+        <p>
+          <a href="http://ceylon-lang.org">http://ceylon-lang.org</a>
+        </p>
       </li>
       <li>
-        <a href="https://gitter.im/ceylon/user">https://gitter.im/ceylon/user</a>
+        <p>
+          <a href="https://gitter.im/ceylon/user">https://gitter.im/ceylon/user</a>
+        </p>
       </li>
       <li>
-        <a href="https://groups.google.com/group/ceylon-users">https://groups.google.com/group/ceylon-users</a>
+        <p>
+          <a href="https://groups.google.com/group/ceylon-users">https://groups.google.com/group/ceylon-users</a>
+        </p>
       </li>
     </ul>
   </div>

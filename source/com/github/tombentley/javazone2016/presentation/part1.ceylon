@@ -7,7 +7,11 @@ import com.github.tombentley.deck {
 {Slide|Transition*} part1 => [
     (State state) => State(0, 800),
     Slide{
-        "## A lightning tour of the language"
+        """## A lightning tour of the language
+           
+           * Enough of the language to understand the demos.
+           * 15 minutes (or so).
+        """
     },
     transitions.left,
     Slide{
@@ -17,7 +21,7 @@ import com.github.tombentley.deck {
            Let's start with hello world:
            
                shared void hello(String name) {
-                   print("Hello " + name);
+                   print("Hello ``name``");
                }
            
            * A function doesn't have to be in a class, it can be declared
@@ -27,7 +31,7 @@ import com.github.tombentley.deck {
            * `print` is a function from 
              the Ceylon language module (`ceylon.language`) that prints 
              to standard output.
-           * We can concatenate Strings using `+`.
+           * Double backticks in a string literal is interpolation.
            """
     },
     Slide{
@@ -56,7 +60,7 @@ import com.github.tombentley.deck {
            I would have to declare it slightly differently:
            
                void hello(String? name) {
-                   print("Hello " + name);// error
+                   print("Hello ``name``");// error
                }
            
            The `String?` parameter type means "`String` or null".
@@ -79,7 +83,7 @@ import com.github.tombentley.deck {
            
                void hello(String? name) {
                    if (exists name) {
-                        print("Hello " + name);
+                        print("Hello ``name``");
                    } else {
                         print("Hello world");
                    }
@@ -95,12 +99,12 @@ import com.github.tombentley.deck {
            
            Another way to do the same thing is using `switch`
            
-               void hello(String? name="world") {
+               void hello(String? name) {
                    switch(name)
                    case (is String) {
-                       print("Hello " + name);
+                       print("Hello ``name``");
                    } else {
-                       print("Hello, whoever you are");
+                       print("Hello world");
                    }
                }
            
@@ -120,10 +124,10 @@ import com.github.tombentley.deck {
              `name` value as having the narrower type `String`.
            
                // outside if block name has type String?
-               // (so "Hello "+name is a compile error)
+               // (so "Hello ``name``" is a compile error)
                if (exists name) {
                     // inside block name has type String
-                    // (so "Hello "+name is allowed)
+                    // (so "Hello ``name``" is allowed)
                }
            
            * This synergy of control flow and 
@@ -165,7 +169,7 @@ import com.github.tombentley.deck {
            But we *can* give parameters a default value.
            
                void hello(String name="world") {
-                    print("Hello " + name);
+                    print("Hello ``name``");
                 }
            
            then we can call it like this:
@@ -206,13 +210,13 @@ import com.github.tombentley.deck {
     },
     Slide{
         id="hof3";
-        """### Function references
+        """### Callables & function references
         
            Let's add a parameter for that:
            
                void hello(String name, 
                           Anything(String) emit) {
-                   emit("Hello " + name);
+                   emit("Hello ``name``");
                }
            
            I invoke the function `emit` by adding an argument list.
@@ -225,6 +229,22 @@ import com.github.tombentley.deck {
     },
     Slide{
         id="hof4";
+        """### Function parameters
+           
+           Alternatively instead of declaring `emit` as a
+           `Callable`-type value parameter,
+           I can declare `emit` as a function parameter:
+           
+               void hello(String name, 
+                          void emit(String str)) {
+                   emit("Hello ``name``");
+               }
+           
+           It means (almost) exactly the same thing.
+        """
+    },
+    Slide{
+        id="hof5";
         """### Function references
            
            With this abstraction I can print to a file, or a 
@@ -410,8 +430,9 @@ import com.github.tombentley.deck {
            If you want to know more about the language, check out 
            the 'Tour of Ceylon' ([http://ceylon-lang.org/documentation/current/tour](http://ceylon-lang.org/documentation/current/tour/))
            
-           But there's a lot more to Ceylon than just the language, so now 
-           you're going to see some of the SDK, IDE and CLI tools.
+           We are now 
+           going to see some real Ceylon code, using Eclipse, 
+           IntelliJ and the CLI tools.
            """
     }
 ];

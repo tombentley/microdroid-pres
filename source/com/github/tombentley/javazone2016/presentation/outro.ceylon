@@ -21,13 +21,14 @@ import com.github.tombentley.deck {
         """### What haven't we seen?
            
            There's **loads** of stuff I've not had time to talk about. 
-           Including (but not limited to): Ceylon JS, 
-           Mobile development with Cordova,
+           Including (but not limited to): Ceylon JS 
+           to leverage Cordova for mobile development,
            the module system, the Herd,
            the metamodel,
-           serialization, 
+           serialization,
+           Using Maven and NPM repositories,
            interop with Java/JEE,
-           ceylon dart, TypeScript...
+           Ceylon Dart, TypeScript...
            
            If you're interested then check out
            
@@ -44,7 +45,8 @@ import com.github.tombentley.deck {
            * Ceylon 1.3 should be out "next week"
            * So too will new versions of the Eclipse IDE
            * And the IntelliJ plugin
-           
+           """,
+        """
            Please tell us what you think!
            
            * [http://ceylon-lang.org](http://ceylon-lang.org)

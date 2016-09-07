@@ -16,14 +16,10 @@ import com.github.tombentley.deck {
         id="part-2";
         """## A microservice using `ceylon.http.server` 
            
-           ### (in Eclipse)"""
+           * Demo in Eclipse
+        """
     },
     transitions.left,
-    //Slide {
-    //    id="number-arch";
-    //    H3{"Architecture"},
-    //    Img{src="number-service.svg";}
-    //},
     Slide{
         id="number-api";
         """### A number service

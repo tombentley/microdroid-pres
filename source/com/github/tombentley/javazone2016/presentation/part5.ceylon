@@ -11,12 +11,8 @@ import com.github.tombentley.deck {
         id="part-5";
         """## An Android app 
            
-           ## (in Android Studio)
-           
-           * We've now seen several different ways to write microservices 
-             in Ceylon.
+           * Demo in Android Studio
            * Ceylon supports Android development from Ceylon 1.3.
-           * So let's look at an Android client for this stuff!
            """
     },
     transitions.left,
@@ -40,9 +36,8 @@ import com.github.tombentley.deck {
              used by Android Studio
            * and transparently packages the Ceylon runtime and all your 
              module's transitive dependencies into your app. 
-           * The ceylon metamodel is suppored statically, 
+           * The ceylon metamodel is supported statically, 
              (avoiding lots of reflection) and it initialized at runtime.
-           
            """
     },
     Slide {"### Demo"},
