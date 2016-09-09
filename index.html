@@ -4,14 +4,12 @@
        <meta charset='utf-8' />
        <meta name='viewport' content='width=1024' />
        <meta name='apple-mobile-web-app-capable' content='yes' />
-       <title>The most amazing Ceylon presentation you'll ever see</title>
+       <title>The most incredible Ceylon presentation you'll ever see</title>
        
        <meta name='description' content='A presentation about the Ceylon programing language 
 and how it can be used to write microservices and 
 Android applications' />
        <meta name='author' content='Tom Bentley' />
-       
-       <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet'>
        
        <link href='css/presentation.css' rel='stylesheet' />
        <link href='css/paraiso-dark.css' rel='stylesheet' type='text/css'>
@@ -148,11 +146,11 @@ cases:</li>
 </code></pre>
     <ul>
       <li>
-        <p>The <code>if (exists ...)</code> construct is a combined
-typecheck-and-downcast in one).</p>
+        <p>The <code>if (exists ...)</code> construct is (type-narrowing) non-null check</p>
       </li>
       <li>
-        <p>Equivalently I could say <code>if (is String name) ...</code>.</p>
+        <p>Or I could say <code>if (is String name)</code>, a combined
+typecheck-and-downcast in one.</p>
       </li>
     </ul>
   </div>
@@ -504,7 +502,11 @@ IntelliJ and the CLI tools.</p>
   </div>
   <div id="part-2" class="step slide" data-x="0" data-y="1600">
     <h2>A microservice using <code>ceylon.http.server</code> </h2>
-    <h3>(in Eclipse)</h3>
+    <ul>
+      <li>
+        <p>Demo in Eclipse</p>
+      </li>
+    </ul>
   </div>
   <div id="number-api" class="step slide" data-x="1000" data-y="1600" data-z="0">
     <h3>A number service</h3>
@@ -553,8 +555,8 @@ project) under the covers</p>
 (e.g. had to write convenience method for getting parameters)</p>
       </li>
       <li>
-        <p>its requirements are simple enough that it doesn't have to solve a
-serialization problem</p>
+        <p>But the requirements are simple enough that the solution doesn't
+need to be complex.</p>
       </li>
       <li>
         <p>It works!</p>
@@ -563,7 +565,11 @@ serialization problem</p>
   </div>
   <div id="part-3" class="step slide" data-x="0" data-y="2400">
     <h2>Two microservices using Vert.x </h2>
-    <h3>(on the command line)</h3>
+    <ul>
+      <li>
+        <p>Demo on the command line</p>
+      </li>
+    </ul>
   </div>
   <div id="adjectives" class="step slide" data-x="1000" data-y="2400" data-z="0">
     <h3>An adjective server</h3>
@@ -581,24 +587,12 @@ API instead of <code>ceylon.http.server</code>.</p>
       <a href="http://vertx.io">Vert.x</a>
 is a toolkit for building <em>reactive</em> applications on the JVM.</p>
     <ul>
-      <li>
-        <p>Polyglot (Ceylon plus some niche languages: Java, JavaSript, Ruby &amp; Groovy)</p>
-      </li>
-      <li>
-        <p>Modular building blocks, not an app server</p>
-      </li>
-      <li>
-        <p>Event driven</p>
-      </li>
-      <li>
-        <p>Using multiple event loops to dispatch events</p>
-      </li>
-      <li>
-        <p>Non-blocking</p>
-      </li>
-      <li>
-        <p>Therefore our handlers shouldn't block the event loop</p>
-      </li>
+      <li>Polyglot (Ceylon plus some niche languages: Java, JavaSript, Ruby &amp; Groovy)</li>
+      <li>Modular building blocks, not an app server</li>
+      <li>Event driven</li>
+      <li>Using multiple event loops to dispatch events</li>
+      <li>Non-blocking</li>
+      <li>Therefore our handlers shouldn't block the event loop</li>
     </ul>
   </div>
   <div class="step slide" data-x="3000" data-y="2400" data-z="0">
@@ -645,7 +639,9 @@ on top of Vert.x core.</p>
   </div>
   <div id="part-4" class="step slide" data-x="0" data-y="3200">
     <h2>A microservice using gyokuro </h2>
-    <h3>(in IntelliJ)</h3>
+    <ul>
+      <li>Demo in IntelliJ</li>
+    </ul>
   </div>
   <div class="step slide" data-x="1000" data-y="3200" data-z="0">
     <h3>A Rendering Service</h3>
@@ -702,17 +698,12 @@ Ceylon presentation ever, well, sorry!
   </div>
   <div id="part-5" class="step slide" data-x="0" data-y="4000">
     <h2>An Android app </h2>
-    <h2>(in Android Studio)</h2>
     <ul>
       <li>
-        <p>We've now seen several different ways to write microservices
-in Ceylon.</p>
+        <p>Demo in Android Studio</p>
       </li>
       <li>
         <p>Ceylon supports Android development from Ceylon 1.3.</p>
-      </li>
-      <li>
-        <p>So let's look at an Android client for this stuff!</p>
       </li>
     </ul>
   </div>
@@ -749,7 +740,12 @@ module's transitive dependencies into your app. </li>
   <div class="step slide" data-x="3000" data-y="4000" data-z="0">
     <h3>Demo</h3>
   </div>
-  <div class="step slide" data-x="4000" data-y="4000" data-z="0">
+  <div id="architecture" class="step slide" data-x="4000" data-y="4000" data-z="0">
+    <h3>What have we seen again?</h3>
+    <img src="architecture.svg" width="780">
+    <p>... using Eclipse, IntelliJ, Android Studio, the CLI</p>
+  </div>
+  <div class="step slide" data-x="5000" data-y="4000" data-z="0">
     <h3>Future plans for Android development</h3>
     <p>In the next version of Ceylon we aim to improve Android interop:</p>
     <ul>
@@ -764,12 +760,7 @@ module's transitive dependencies into your app. </li>
       </li>
     </ul>
   </div>
-  <div id="architecture" class="step slide" data-x="0" data-y="4800">
-    <h3>What have we seen again?</h3>
-    <img src="architecture.svg" width="780">
-    <p>... using Eclipse, IntelliJ, Android Studio, the CLI</p>
-  </div>
-  <div class="step slide" data-x="1000" data-y="4800" data-z="0">
+  <div class="step slide" data-x="0" data-y="4800">
     <h3>What haven't we seen?</h3>
     <p>There's <strong>loads</strong> of stuff I've not had time to talk about.
 Including (but not limited to): Ceylon JS
@@ -793,7 +784,7 @@ Ceylon Dart, TypeScript...</p>
       </li>
     </ul>
   </div>
-  <div id="1.3" class="step slide" data-x="2000" data-y="4800" data-z="0">
+  <div id="1.3" class="step slide" data-x="1000" data-y="4800" data-z="0">
     <h3>Ceylon 1.3</h3>
     <ul>
       <li>
@@ -828,7 +819,7 @@ Ceylon Dart, TypeScript...</p>
       </li>
     </ul>
   </div>
-  <div id="overview" class="step slide" data-x="500" data-y="2400" data-z="7000" data-rotate-x="0" data-rotate-y="-35" data-rotate-z="0"></div>
+  <div id="overview" class="step slide" data-x="-500" data-y="2400" data-z="7000" data-rotate-x="0" data-rotate-y="-35" data-rotate-z="0"></div>
 </div>
     <script src="js/impress.js"></script>
     <script src="js/rainbow-custom.min.js"></script>

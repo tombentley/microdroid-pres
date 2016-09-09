@@ -55,8 +55,8 @@ import com.github.tombentley.deck {
             
              * The `ceylon.http.server` API is quite low level, 
                (e.g. had to write convenience method for getting parameters)
-             * its requirements are simple enough that it doesn't have to solve a 
-               serialization problem
+             * But the requirements are simple enough that the solution doesn't 
+               need to be complex.
              * It works!
              """
      }

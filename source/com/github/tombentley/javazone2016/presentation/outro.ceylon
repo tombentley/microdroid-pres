@@ -11,13 +11,6 @@ import com.github.tombentley.deck {
 {Slide|Transition*} outro => {
     (State state) => State(0, 4800),
     Slide {
-        id="architecture";
-        H3{"What have we seen again?"},
-        Img{src="architecture.svg"; width=780;},
-        """... using Eclipse, IntelliJ, Android Studio, the CLI"""
-    },
-    transitions.left,
-    Slide {
         """### What haven't we seen?
            
            There's **loads** of stuff I've not had time to talk about. 
@@ -35,8 +28,10 @@ import com.github.tombentley.deck {
            * [http://ceylon-lang.org](http://ceylon-lang.org)
            * [https://gitter.im/ceylon/user](https://gitter.im/ceylon/user)
            * [https://groups.google.com/group/ceylon-users](https://groups.google.com/group/ceylon-users)
-        """
+           """
     },
+    transitions.left,
+    
     Slide{
         id="1.3";
         """### Ceylon 1.3

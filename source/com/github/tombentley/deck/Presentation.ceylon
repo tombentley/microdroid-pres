@@ -44,8 +44,6 @@ shared class Presentation(
                   <meta name='description' content='``description``' />
                   <meta name='author' content='``author``' />
                   
-                  <link href='https://fonts.googleapis.com/css?family=Cabin' rel='stylesheet'>
-                  
                   <link href='css/presentation.css' rel='stylesheet' />
                   <link href='css/paraiso-dark.css' rel='stylesheet' type='text/css'>
              

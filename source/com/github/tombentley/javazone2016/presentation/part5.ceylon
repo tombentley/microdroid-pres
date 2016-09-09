@@ -4,6 +4,10 @@ import com.github.tombentley.deck {
     State,
     transitions
 }
+import ceylon.html {
+    Img,
+    H3
+}
 
 {Slide|Transition*} part5 = [
     (State state) => State(0, 4000),
@@ -41,6 +45,12 @@ import com.github.tombentley.deck {
            """
     },
     Slide {"### Demo"},
+    Slide {
+        id="architecture";
+        H3{"What have we seen again?"},
+        Img{src="architecture.svg"; width=780;},
+        """... using Eclipse, IntelliJ, Android Studio, the CLI"""
+    },
     Slide {
         """### Future plans for Android development
            

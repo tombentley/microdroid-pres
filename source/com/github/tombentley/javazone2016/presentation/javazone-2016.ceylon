@@ -20,7 +20,7 @@ Pre code(String text)
 "The presentation"
 Presentation presentation =>
     Presentation { 
-        title = "The most amazing Ceylon presentation you'll ever see"; 
+        title = "The most incredible Ceylon presentation you'll ever see"; 
         description = "A presentation about the Ceylon programing language 
                        and how it can be used to write microservices and 
                        Android applications"; 

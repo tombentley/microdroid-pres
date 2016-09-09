@@ -89,9 +89,9 @@ import com.github.tombentley.deck {
                    }
                }
            
-           * The `if (exists ...)` construct is a combined 
-            typecheck-and-downcast in one).
-           * Equivalently I could say `if (is String name) ...`."""
+           * The `if (exists ...)` construct is (type-narrowing) non-null check
+           * Or I could say `if (is String name)`, a combined 
+            typecheck-and-downcast in one."""
     },
     Slide{
         id="switch";
