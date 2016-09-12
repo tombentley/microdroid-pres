@@ -3,444 +3,444 @@ var $$req$ = require; require = (typeof $$ceylon$require == 'undefined') ? $$req
 
 var _CTM$;function $CCMM$(){if (_CTM$===undefined)_CTM$=require('ceylon/markdown/html/1.0.0/ceylon.markdown.html-1.0.0-model').$CCMM$;return _CTM$;}
 ex$.$CCMM$=$CCMM$;
-var m$t3v=require('ceylon/language/1.2.3/ceylon.language-1.2.3');
-m$t3v.$addmod$(m$t3v,'ceylon.language/1.2.3');
-m$t3v.$addmod$(ex$,'ceylon.markdown.html/1.0.0');
-var m$t41=require('ceylon/html/1.2.3/ceylon.html-1.2.3');
-m$t3v.$addmod$(m$t41,'ceylon.html/1.2.3');
-var m$t3x=require('ceylon/markdown/core/1.0.0/ceylon.markdown.core-1.0.0');
-m$t3v.$addmod$(m$t3x,'ceylon.markdown.core/1.0.0');
-ex$.$mod$ans$=function(){return[m$t3v.doc$($CCMM$,'','$mod-anns'),m$t3v.by(m$t3v.$arr$sa$(["Rohit Mohan"],{t:m$t3v.$_String})),m$t3v.license("https://www.apache.org/licenses/LICENSE-2.0.html"),m$t3v.suppressWarnings(m$t3v.$arr$sa$(["ceylonNamespace"],{t:m$t3v.$_String}))];};
+var m$hkj=require('ceylon/language/1.3.0/ceylon.language-1.3.0');
+m$hkj.$addmod$(m$hkj,'ceylon.language/1.3.0');
+m$hkj.$addmod$(ex$,'ceylon.markdown.html/1.0.0');
+var m$hkm=require('ceylon/html/1.3.0/ceylon.html-1.3.0');
+m$hkj.$addmod$(m$hkm,'ceylon.html/1.3.0');
+var m$hkn=require('ceylon/markdown/core/1.0.0/ceylon.markdown.core-1.0.0');
+m$hkj.$addmod$(m$hkn,'ceylon.markdown.core/1.0.0');
+ex$.$mod$ans$=function(){return[m$hkj.doc$($CCMM$,'','$mod-anns'),m$hkj.by(m$hkj.$arr$sa$(["Rohit Mohan"],{t:m$hkj.$_String})),m$hkj.license("https://www.apache.org/licenses/LICENSE-2.0.html"),m$hkj.suppressWarnings(m$hkj.$arr$sa$(["ceylonNamespace"],{t:m$hkj.$_String}))];};
 ex$.$mod$imps=function(){return{
-'ceylon.markdown.core/1.0.0':function(){return[m$t3v.shared()];},
-'ceylon.html/1.2.3':function(){return[m$t3v.shared()];}
+'ceylon.markdown.core/1.0.0':function(){return[m$hkj.shared()];},
+'ceylon.html/1.3.0':function(){return[m$hkj.shared()];}
 };};
 
 //TypeAliasDecl HtmlChildren at HtmlVisitor.ceylon (52:0-52:71)
-function HtmlChildren(){var $tju=m$t3v.mut$([m$t3v.mit$([{t:m$t41.Node},{t:m$t41.FlowCategory}]),m$t41.CharacterData(),{t:m$t3v.$_String}]);$tju.$crtmm$=function(){return{mod:$CCMM$,pa:1,d:['ceylon.markdown.html','HtmlChildren']};};return $tju;}
+function HtmlChildren(){var $i0j=m$hkj.mut$([m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.FlowCategory}]),m$hkm.CharacterData(),{t:m$hkj.$_String}]);$i0j.$crtmm$=function(){return{mod:$CCMM$,pa:1,d:['ceylon.markdown.html','HtmlChildren']};};return $i0j;}
 ex$.HtmlChildren=HtmlChildren;
 //ClassDef HtmlVisitor at HtmlVisitor.ceylon (54:0-205:0)
 function HtmlVisitor(htmlVisitor$){
 $init$HtmlVisitor();
 if(htmlVisitor$===undefined)htmlVisitor$=new HtmlVisitor.$$;
-htmlVisitor$.$$targs$$={Type$Visitor:m$t3v.mut$([{t:m$t41.Node},{t:m$t3v.$_String},{t:m$t3v.Sequential,a:{Element$Sequential:m$t3v.mut$([m$t3v.mit$([{t:m$t41.Node},{t:m$t41.FlowCategory}]),{t:m$t3v.$_String},{t:m$t41.Raw},{t:m$t41.Comment},{t:m$t41.ProcessingInstruction}])}}])};
-m$t3x.Visitor({Type$Visitor:m$t3v.mut$([{t:m$t41.Node},{t:m$t3v.$_String},{t:m$t3v.Sequential,a:{Element$Sequential:m$t3v.mut$([m$t3v.mit$([{t:m$t41.Node},{t:m$t41.FlowCategory}]),{t:m$t3v.$_String},{t:m$t41.Raw},{t:m$t41.Comment},{t:m$t41.ProcessingInstruction}])}}])},htmlVisitor$);
+htmlVisitor$.$$targs$$={Type$Visitor:m$hkj.mut$([{t:m$hkm.Node},{t:m$hkj.$_String},{t:m$hkj.Sequential,a:{Element$Sequential:m$hkj.mut$([m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.FlowCategory}]),{t:m$hkj.$_String},{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction}])}}])};
+m$hkn.Visitor({Type$Visitor:m$hkj.mut$([{t:m$hkm.Node},{t:m$hkj.$_String},{t:m$hkj.Sequential,a:{Element$Sequential:m$hkj.mut$([m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.FlowCategory}]),{t:m$hkj.$_String},{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction}])}}])},htmlVisitor$);
 return htmlVisitor$;
 }
-HtmlVisitor.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$t3v.Basic},ps:[],sts:[{t:m$t3x.Visitor,a:{Type$Visitor:{t:'u',l:[{t:m$t41.Node},{t:m$t3v.$_String},{t:m$t3v.Sequential,a:{Element$Sequential:HtmlChildren()}}]}}}],pa:1,an:function(){return[m$t3v.doc$($CCMM$,'ceylon.markdown.html:HtmlVisitor')];},d:['ceylon.markdown.html','HtmlVisitor']};};
+HtmlVisitor.$crtmm$=function(){return{mod:$CCMM$,'super':{t:m$hkj.Basic},ps:[],sts:[{t:m$hkn.Visitor,a:{Type$Visitor:{t:'u',l:[{t:m$hkm.Node},{t:m$hkj.$_String},{t:m$hkj.Sequential,a:{Element$Sequential:HtmlChildren()}}]}}}],pa:1,an:function(){return[m$hkj.doc$($CCMM$,'ceylon.markdown.html:HtmlVisitor')];},d:['ceylon.markdown.html','HtmlVisitor']};};
 ex$.HtmlVisitor=HtmlVisitor;
 function $init$HtmlVisitor(){
 if(HtmlVisitor.$$===undefined){
-m$t3v.initTypeProto(HtmlVisitor,'ceylon.markdown.html::HtmlVisitor',m$t3v.Basic,m$t3x.Visitor);
+m$hkj.initTypeProto(HtmlVisitor,'ceylon.markdown.html::HtmlVisitor',m$hkj.Basic,m$hkn.Visitor);
 (function(htmlVisitor$){
 //MethodDecl visitBlockQuote at HtmlVisitor.ceylon (59:1-62:2)
-htmlVisitor$.visitBlockQuote=function($tjv){var htmlVisitor$=this;
-return ($tjw=m$t3v.tpl$([],m$t3v.for$(function(){
+htmlVisitor$.visitBlockQuote=function($i0k){var htmlVisitor$=this;
+return ($i0l=m$hkj.tpl$([],m$hkj.for$(function(){
 //Comprehension at HtmlVisitor.ceylon (60:14-61:71)
-var $tjz;
-var $tjx=$tjv.children.iterator(),$tjy=m$t3v.finished();
-var n$tjy=function(){
-while(($tjy=$tjx.next())!==m$t3v.finished()){
-if(m$t3v.is$(($tjz=$tjy.accept(htmlVisitor$,{Type$accept:m$t3v.mut$([{t:m$t41.Node},{t:m$t3v.$_String},{t:m$t3v.Sequential,a:{Element$Sequential:m$t3v.mut$([m$t3v.mit$([{t:m$t41.Node},{t:m$t41.FlowCategory}]),{t:m$t3v.$_String},{t:m$t41.Raw},{t:m$t41.Comment},{t:m$t41.ProcessingInstruction}])}}])})),m$t3v.mut$([m$t41.CharacterData(),{t:m$t41.FlowCategory},{t:m$t3v.$_String}]))){
-return $tjy;
+var $i0o;
+var $i0m=$i0k.children.iterator(),$i0n=m$hkj.finished();
+var n$i0n=function(){
+while(($i0n=$i0m.next())!==m$hkj.finished()){
+if(m$hkj.is$(($i0o=$i0n.accept(htmlVisitor$,{Type$accept:m$hkj.mut$([{t:m$hkm.Node},{t:m$hkj.$_String},{t:m$hkj.Sequential,a:{Element$Sequential:m$hkj.mut$([m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.FlowCategory}]),{t:m$hkj.$_String},{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction}])}}])})),m$hkj.mut$([m$hkm.CharacterData(),{t:m$hkm.FlowCategory},{t:m$hkj.$_String}]))){
+return $i0n;
 }
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
 return function(){
-if(n$tjy()!==m$t3v.finished()){
-var $tk0=$tjy,$tk1=$tjz;
-return $tk1;
+if(n$i0n()!==m$hkj.finished()){
+var $i0p=$i0n,$i0q=$i0o;
+return $i0q;
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
-},{Element$Iterable:m$t3v.mut$([{t:m$t41.Raw},{t:m$t41.Comment},{t:m$t41.ProcessingInstruction},m$t3v.mit$([{t:m$t41.Node},{t:m$t41.FlowCategory}]),{t:m$t3v.$_String}]),Absent$Iterable:{t:m$t3v.Null}})),m$t41.Blockquote(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tjw));
-var $tjw;
+},{Element$Iterable:m$hkj.mut$([{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction},m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.FlowCategory}]),{t:m$hkj.$_String}]),Absent$Iterable:{t:m$hkj.Null}})),m$hkm.Blockquote(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i0l));
+var $i0l;
 };
-htmlVisitor$.visitBlockQuote.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t41.Node},ps:[{nm:'blockQuote',mt:'prm',$t:{t:m$t3x.BlockQuote}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitBlockQuote']};};
+htmlVisitor$.visitBlockQuote.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkm.Node},ps:[{nm:'blockQuote',mt:'prm',$t:{t:m$hkn.BlockQuote}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitBlockQuote']};};
 //MethodDecl visitCode at HtmlVisitor.ceylon (64:1-66:2)
-htmlVisitor$.visitCode=function($tk2){var htmlVisitor$=this;
-return ($tk3=$tk2.text.linesWithBreaks,m$t41.Code(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tk3));
-var $tk3;
+htmlVisitor$.visitCode=function($i0r){var htmlVisitor$=this;
+return ($i0s=$i0r.text.linesWithBreaks,m$hkm.Code(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i0s));
+var $i0s;
 };
-htmlVisitor$.visitCode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t41.Node},ps:[{nm:'code',mt:'prm',$t:{t:m$t3x.Code}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitCode']};};
+htmlVisitor$.visitCode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkm.Node},ps:[{nm:'code',mt:'prm',$t:{t:m$hkn.Code}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitCode']};};
 //MethodDecl visitDocument at HtmlVisitor.ceylon (68:1-70:73)
-htmlVisitor$.visitDocument=function($tk4){var htmlVisitor$=this;
-return m$t3v.tpl$([],m$t3v.for$(function(){
+htmlVisitor$.visitDocument=function($i0t){var htmlVisitor$=this;
+return m$hkj.tpl$([],m$hkj.for$(function(){
 //Comprehension at HtmlVisitor.ceylon (69:3-70:71)
-var $tk7;
-var $tk5=$tk4.children.iterator(),$tk6=m$t3v.finished();
-var n$tk6=function(){
-while(($tk6=$tk5.next())!==m$t3v.finished()){
-if(m$t3v.is$(($tk7=$tk6.accept(htmlVisitor$,{Type$accept:m$t3v.mut$([{t:m$t41.Node},{t:m$t3v.$_String},{t:m$t3v.Sequential,a:{Element$Sequential:m$t3v.mut$([m$t3v.mit$([{t:m$t41.Node},{t:m$t41.FlowCategory}]),{t:m$t3v.$_String},{t:m$t41.Raw},{t:m$t41.Comment},{t:m$t41.ProcessingInstruction}])}}])})),m$t3v.mut$([m$t41.CharacterData(),{t:m$t41.FlowCategory},{t:m$t3v.$_String}]))){
-return $tk6;
+var $i0w;
+var $i0u=$i0t.children.iterator(),$i0v=m$hkj.finished();
+var n$i0v=function(){
+while(($i0v=$i0u.next())!==m$hkj.finished()){
+if(m$hkj.is$(($i0w=$i0v.accept(htmlVisitor$,{Type$accept:m$hkj.mut$([{t:m$hkm.Node},{t:m$hkj.$_String},{t:m$hkj.Sequential,a:{Element$Sequential:m$hkj.mut$([m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.FlowCategory}]),{t:m$hkj.$_String},{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction}])}}])})),m$hkj.mut$([m$hkm.CharacterData(),{t:m$hkm.FlowCategory},{t:m$hkj.$_String}]))){
+return $i0v;
 }
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
 return function(){
-if(n$tk6()!==m$t3v.finished()){
-var $tk8=$tk6,$tk9=$tk7;
-return $tk9;
+if(n$i0v()!==m$hkj.finished()){
+var $i0x=$i0v,$i0y=$i0w;
+return $i0y;
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
-},{Element$Iterable:m$t3v.mut$([{t:m$t41.Raw},{t:m$t41.Comment},{t:m$t41.ProcessingInstruction},m$t3v.mit$([{t:m$t41.Node},{t:m$t41.FlowCategory}]),{t:m$t3v.$_String}]),Absent$Iterable:{t:m$t3v.Null}}));
+},{Element$Iterable:m$hkj.mut$([{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction},m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.FlowCategory}]),{t:m$hkj.$_String}]),Absent$Iterable:{t:m$hkj.Null}}));
 };
-htmlVisitor$.visitDocument.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t3v.Sequential,a:{Element$Sequential:HtmlChildren()}},ps:[{nm:'document',mt:'prm',$t:{t:m$t3x.Document}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitDocument']};};
+htmlVisitor$.visitDocument.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkj.Sequential,a:{Element$Sequential:HtmlChildren()}},ps:[{nm:'document',mt:'prm',$t:{t:m$hkn.Document}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitDocument']};};
 //MethodDecl visitEmphasis at HtmlVisitor.ceylon (72:1-75:2)
-htmlVisitor$.visitEmphasis=function($tka){var htmlVisitor$=this;
-return ($tkb=m$t3v.tpl$([],m$t3v.for$(function(){
+htmlVisitor$.visitEmphasis=function($i0z){var htmlVisitor$=this;
+return ($i10=m$hkj.tpl$([],m$hkj.for$(function(){
 //Comprehension at HtmlVisitor.ceylon (73:14-74:75)
-var $tke;
-var $tkc=$tka.children.iterator(),$tkd=m$t3v.finished();
-var n$tkd=function(){
-while(($tkd=$tkc.next())!==m$t3v.finished()){
-if(m$t3v.is$(($tke=$tkd.accept(htmlVisitor$,{Type$accept:m$t3v.mut$([{t:m$t41.Node},{t:m$t3v.$_String},{t:m$t3v.Sequential,a:{Element$Sequential:m$t3v.mut$([m$t3v.mit$([{t:m$t41.Node},{t:m$t41.FlowCategory}]),{t:m$t3v.$_String},{t:m$t41.Raw},{t:m$t41.Comment},{t:m$t41.ProcessingInstruction}])}}])})),m$t3v.mut$([m$t41.CharacterData(),{t:m$t41.PhrasingCategory},{t:m$t3v.$_String}]))){
-return $tkd;
+var $i13;
+var $i11=$i0z.children.iterator(),$i12=m$hkj.finished();
+var n$i12=function(){
+while(($i12=$i11.next())!==m$hkj.finished()){
+if(m$hkj.is$(($i13=$i12.accept(htmlVisitor$,{Type$accept:m$hkj.mut$([{t:m$hkm.Node},{t:m$hkj.$_String},{t:m$hkj.Sequential,a:{Element$Sequential:m$hkj.mut$([m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.FlowCategory}]),{t:m$hkj.$_String},{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction}])}}])})),m$hkj.mut$([{t:m$hkm.PhrasingCategory},m$hkm.CharacterData(),{t:m$hkj.$_String}]))){
+return $i12;
 }
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
 return function(){
-if(n$tkd()!==m$t3v.finished()){
-var $tkf=$tkd,$tkg=$tke;
-return $tkg;
+if(n$i12()!==m$hkj.finished()){
+var $i14=$i12,$i15=$i13;
+return $i15;
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
-},{Element$Iterable:m$t3v.mut$([{t:m$t41.Raw},{t:m$t41.Comment},{t:m$t41.ProcessingInstruction},m$t3v.mit$([{t:m$t41.Node},{t:m$t41.PhrasingCategory}]),{t:m$t3v.$_String}]),Absent$Iterable:{t:m$t3v.Null}})),m$t41.Em(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tkb));
-var $tkb;
+},{Element$Iterable:m$hkj.mut$([m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.PhrasingCategory}]),{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction},{t:m$hkj.$_String}]),Absent$Iterable:{t:m$hkj.Null}})),m$hkm.Em(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i10));
+var $i10;
 };
-htmlVisitor$.visitEmphasis.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t41.Node},ps:[{nm:'emphasis',mt:'prm',$t:{t:m$t3x.Emphasis}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitEmphasis']};};
+htmlVisitor$.visitEmphasis.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkm.Node},ps:[{nm:'emphasis',mt:'prm',$t:{t:m$hkn.Emphasis}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitEmphasis']};};
 //MethodDecl visitFencedCode at HtmlVisitor.ceylon (77:1-81:2)
-htmlVisitor$.visitFencedCode=function($tkh){var htmlVisitor$=this;
-return ($tki=m$t3v.$arr$sa$([($tkj=$tkh.text.linesWithBreaks,m$t41.Code(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tkj))],{t:m$t41.Code},1),m$t41.Pre(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tki));
-var $tki,$tkj;
+htmlVisitor$.visitFencedCode=function($i16){var htmlVisitor$=this;
+return ($i17=m$hkj.$arr$sa$([($i18=$i16.text.linesWithBreaks,m$hkm.Code(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i18))],{t:m$hkm.Code},1),m$hkm.Pre(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i17));
+var $i17,$i18;
 };
-htmlVisitor$.visitFencedCode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t41.Node},ps:[{nm:'fencedCode',mt:'prm',$t:{t:m$t3x.FencedCode}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitFencedCode']};};
+htmlVisitor$.visitFencedCode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkm.Node},ps:[{nm:'fencedCode',mt:'prm',$t:{t:m$hkn.FencedCode}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitFencedCode']};};
 //MethodDecl visitHardBreak at HtmlVisitor.ceylon (83:1-83:75)
-htmlVisitor$.visitHardBreak=function($tkk){return m$t41.Br();
+htmlVisitor$.visitHardBreak=function($i19){return m$hkm.Br();
 };
-htmlVisitor$.visitHardBreak.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t41.Node},ps:[{nm:'hardBreak',mt:'prm',$t:{t:m$t3x.HardBreak}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitHardBreak']};};
+htmlVisitor$.visitHardBreak.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkm.Node},ps:[{nm:'hardBreak',mt:'prm',$t:{t:m$hkn.HardBreak}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitHardBreak']};};
 //MethodDef visitHeading at HtmlVisitor.ceylon (85:1-111:1)
-htmlVisitor$.visitHeading=function($tkl){
+htmlVisitor$.visitHeading=function($i1a){
 var htmlVisitor$=this;
-var $tkm=m$t3v.tpl$([],m$t3v.for$(function(){
+var $i1b=m$hkj.tpl$([],m$hkj.for$(function(){
 //Comprehension at HtmlVisitor.ceylon (86:20-87:75)
-var $tkp;
-var $tkn=$tkl.children.iterator(),$tko=m$t3v.finished();
-var n$tko=function(){
-while(($tko=$tkn.next())!==m$t3v.finished()){
-if(m$t3v.is$(($tkp=$tko.accept(htmlVisitor$,{Type$accept:m$t3v.mut$([{t:m$t41.Node},{t:m$t3v.$_String},{t:m$t3v.Sequential,a:{Element$Sequential:m$t3v.mut$([m$t3v.mit$([{t:m$t41.Node},{t:m$t41.FlowCategory}]),{t:m$t3v.$_String},{t:m$t41.Raw},{t:m$t41.Comment},{t:m$t41.ProcessingInstruction}])}}])})),m$t3v.mut$([{t:m$t41.PhrasingCategory},m$t41.CharacterData(),{t:m$t3v.$_String}]))){
-return $tko;
+var $i1e;
+var $i1c=$i1a.children.iterator(),$i1d=m$hkj.finished();
+var n$i1d=function(){
+while(($i1d=$i1c.next())!==m$hkj.finished()){
+if(m$hkj.is$(($i1e=$i1d.accept(htmlVisitor$,{Type$accept:m$hkj.mut$([{t:m$hkm.Node},{t:m$hkj.$_String},{t:m$hkj.Sequential,a:{Element$Sequential:m$hkj.mut$([m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.FlowCategory}]),{t:m$hkj.$_String},{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction}])}}])})),m$hkj.mut$([{t:m$hkm.PhrasingCategory},m$hkm.CharacterData(),{t:m$hkj.$_String}]))){
+return $i1d;
 }
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
 return function(){
-if(n$tko()!==m$t3v.finished()){
-var $tkq=$tko,$tkr=$tkp;
-return $tkr;
+if(n$i1d()!==m$hkj.finished()){
+var $i1f=$i1d,$i1g=$i1e;
+return $i1g;
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
-},{Element$Iterable:m$t3v.mut$([m$t3v.mit$([{t:m$t41.Node},{t:m$t41.PhrasingCategory}]),{t:m$t41.Raw},{t:m$t41.Comment},{t:m$t41.ProcessingInstruction},{t:m$t3v.$_String}]),Absent$Iterable:{t:m$t3v.Null}}));
+},{Element$Iterable:m$hkj.mut$([m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.PhrasingCategory}]),{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction},{t:m$hkj.$_String}]),Absent$Iterable:{t:m$hkj.Null}}));
 //Switch statement at HtmlVisitor.ceylon (89:2-110:2)
-var $tks=$tkl.level;
-if((1).equals($tks)) {
-return ($tkt=$tkm,m$t41.H1(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tkt));
-var $tkt;
+var $i1h=$i1a.level;
+if((1).equals($i1h)) {
+return ($i1i=$i1b,m$hkm.H1(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i1i));
+var $i1i;
 }
-else if((2).equals($tks)) {
-return ($tku=$tkm,m$t41.H2(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tku));
-var $tku;
+else if((2).equals($i1h)) {
+return ($i1j=$i1b,m$hkm.H2(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i1j));
+var $i1j;
 }
-else if((3).equals($tks)) {
-return ($tkv=$tkm,m$t41.H3(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tkv));
-var $tkv;
+else if((3).equals($i1h)) {
+return ($i1k=$i1b,m$hkm.H3(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i1k));
+var $i1k;
 }
-else if((4).equals($tks)) {
-return ($tkw=$tkm,m$t41.H4(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tkw));
-var $tkw;
+else if((4).equals($i1h)) {
+return ($i1l=$i1b,m$hkm.H4(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i1l));
+var $i1l;
 }
-else if((5).equals($tks)) {
-return ($tkx=$tkm,m$t41.H5(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tkx));
-var $tkx;
+else if((5).equals($i1h)) {
+return ($i1m=$i1b,m$hkm.H5(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i1m));
+var $i1m;
 }
-else if((6).equals($tks)) {
-return ($tky=$tkm,m$t41.H6(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tky));
-var $tky;
+else if((6).equals($i1h)) {
+return ($i1n=$i1b,m$hkm.H6(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i1n));
+var $i1n;
 }
 else{
-return ($tkz=$tkm,m$t41.H1(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tkz));
-var $tkz;
+return ($i1o=$i1b,m$hkm.H1(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i1o));
+var $i1o;
 }//End switch statement at HtmlVisitor.ceylon (89:2-110:2)
-};htmlVisitor$.visitHeading.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t41.Node},ps:[{nm:'heading',mt:'prm',$t:{t:m$t3x.Heading}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitHeading']};};
+};htmlVisitor$.visitHeading.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkm.Node},ps:[{nm:'heading',mt:'prm',$t:{t:m$hkn.Heading}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitHeading']};};
 //MethodDecl visitHtmlBlock at HtmlVisitor.ceylon (113:1-113:90)
-htmlVisitor$.visitHtmlBlock=function($tl0){var htmlVisitor$=this;
-return m$t41.Raw($tl0.text);
+htmlVisitor$.visitHtmlBlock=function($i1p){var htmlVisitor$=this;
+return m$hkm.Raw($i1p.text);
 };
-htmlVisitor$.visitHtmlBlock.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t41.Node},ps:[{nm:'htmlBlock',mt:'prm',$t:{t:m$t3x.HtmlBlock}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitHtmlBlock']};};
+htmlVisitor$.visitHtmlBlock.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkm.Node},ps:[{nm:'htmlBlock',mt:'prm',$t:{t:m$hkn.HtmlBlock}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitHtmlBlock']};};
 //MethodDecl visitHtmlInline at HtmlVisitor.ceylon (115:1-115:94)
-htmlVisitor$.visitHtmlInline=function($tl1){var htmlVisitor$=this;
-return m$t41.Raw($tl1.text);
+htmlVisitor$.visitHtmlInline=function($i1q){var htmlVisitor$=this;
+return m$hkm.Raw($i1q.text);
 };
-htmlVisitor$.visitHtmlInline.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t41.Node},ps:[{nm:'htmlInline',mt:'prm',$t:{t:m$t3x.HtmlInline}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitHtmlInline']};};
+htmlVisitor$.visitHtmlInline.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkm.Node},ps:[{nm:'htmlInline',mt:'prm',$t:{t:m$hkn.HtmlInline}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitHtmlInline']};};
 //MethodDef visitImage at HtmlVisitor.ceylon (117:1-128:1)
-htmlVisitor$.visitImage=function($tl2){
+htmlVisitor$.visitImage=function($i1r){
 var htmlVisitor$=this;
-var $tl3=htmlVisitor$.$c4xaj4$tl4(($tl5=m$t3v.tpl$([],m$t3v.for$(function(){
+var $i1s=htmlVisitor$.$c4xaj4$i1t(($i1u=m$hkj.tpl$([],m$hkj.for$(function(){
 //Comprehension at HtmlVisitor.ceylon (119:16-120:77)
-var $tl8;
-var $tl6=$tl2.children.iterator(),$tl7=m$t3v.finished();
-var n$tl7=function(){
-while(($tl7=$tl6.next())!==m$t3v.finished()){
-if(m$t3v.is$(($tl8=$tl7.accept(htmlVisitor$,{Type$accept:m$t3v.mut$([{t:m$t41.Node},{t:m$t3v.$_String},{t:m$t3v.Sequential,a:{Element$Sequential:m$t3v.mut$([m$t3v.mit$([{t:m$t41.Node},{t:m$t41.FlowCategory}]),{t:m$t3v.$_String},{t:m$t41.Raw},{t:m$t41.Comment},{t:m$t41.ProcessingInstruction}])}}])})),m$t3v.mut$([m$t41.CharacterData(),{t:m$t41.PhrasingCategory},{t:m$t3v.$_String}]))){
-return $tl7;
+var $i1x;
+var $i1v=$i1r.children.iterator(),$i1w=m$hkj.finished();
+var n$i1w=function(){
+while(($i1w=$i1v.next())!==m$hkj.finished()){
+if(m$hkj.is$(($i1x=$i1w.accept(htmlVisitor$,{Type$accept:m$hkj.mut$([{t:m$hkm.Node},{t:m$hkj.$_String},{t:m$hkj.Sequential,a:{Element$Sequential:m$hkj.mut$([m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.FlowCategory}]),{t:m$hkj.$_String},{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction}])}}])})),m$hkj.mut$([{t:m$hkm.PhrasingCategory},m$hkm.CharacterData(),{t:m$hkj.$_String}]))){
+return $i1w;
 }
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
 return function(){
-if(n$tl7()!==m$t3v.finished()){
-var $tl9=$tl7,$tla=$tl8;
-return $tla;
+if(n$i1w()!==m$hkj.finished()){
+var $i1y=$i1w,$i1z=$i1x;
+return $i1z;
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
-},{Element$Iterable:m$t3v.mut$([{t:m$t41.Raw},{t:m$t41.Comment},{t:m$t41.ProcessingInstruction},m$t3v.mit$([{t:m$t41.Node},{t:m$t41.PhrasingCategory}]),{t:m$t3v.$_String}]),Absent$Iterable:{t:m$t3v.Null}})),m$t41.P(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tl5)));
-var $tl5;
-return ($tlb=$tl2.destination,$tlc=(!m$t3v.$eq$($tl3,"")?$tl3:null),$tld=(m$t3v.$eq$($tl2.title,"")?null:$tl2.title),m$t41.Img(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tld,undefined,$tlc,undefined,undefined,undefined,undefined,$tlb,undefined,undefined));
-var $tlb,$tlc,$tld;
-};htmlVisitor$.visitImage.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t41.Node},ps:[{nm:'image',mt:'prm',$t:{t:m$t3x.Image}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitImage']};};
+},{Element$Iterable:m$hkj.mut$([m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.PhrasingCategory}]),{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction},{t:m$hkj.$_String}]),Absent$Iterable:{t:m$hkj.Null}})),m$hkm.P(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i1u)));
+var $i1u;
+return ($i20=$i1r.destination,$i21=(!m$hkj.$eq$($i1s,"")?$i1s:null),$i22=(m$hkj.$eq$($i1r.title,"")?null:$i1r.title),m$hkm.Img(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i22,undefined,$i21,undefined,undefined,undefined,undefined,$i20,undefined,undefined));
+var $i20,$i21,$i22;
+};htmlVisitor$.visitImage.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkm.Node},ps:[{nm:'image',mt:'prm',$t:{t:m$hkn.Image}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitImage']};};
 //MethodDef getText at HtmlVisitor.ceylon (130:1-141:1)
-htmlVisitor$.$c4xaj4$tl4=function($tle){
+htmlVisitor$.$c4xaj4$i1t=function($i23){
 var htmlVisitor$=this;
-var $tlf=m$t3v.StringBuilder();
+var $i24=m$hkj.StringBuilder();
 //'for' statement at HtmlVisitor.ceylon (132:2-138:2)
-var $tlh;for(var $tlg=$tle.children.iterator();($tlh=$tlg.next())!==m$t3v.finished();){
-var $tli;
-if(m$t3v.is$(($tli=$tlh),{t:m$t3v.$_String})){
-$tlf.append($tli);
+var $i26;for(var $i25=$i23.children.iterator();($i26=$i25.next())!==m$hkj.finished();){
+var $i27;
+if(m$hkj.is$(($i27=$i26),{t:m$hkj.$_String})){
+$i24.append($i27);
 }
 else{
-var $tlj;
-if(m$t3v.is$(($tlj=$tli),{t:m$t41.Node})){
-$tlf.append(htmlVisitor$.$c4xaj4$tl4($tlj));
+var $i28;
+if(m$hkj.is$(($i28=$i27),{t:m$hkm.Node})){
+$i24.append(htmlVisitor$.$c4xaj4$i1t($i28));
 }
 }
 }
-return $tlf.string;
-};htmlVisitor$.$c4xaj4$tl4.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t3v.$_String},ps:[{nm:'node',mt:'prm',$t:{t:m$t41.Node}}],$cont:HtmlVisitor,d:['ceylon.markdown.html','HtmlVisitor','$m','getText$vsk0ho']};};
+return $i24.string;
+};htmlVisitor$.$c4xaj4$i1t.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkj.$_String},ps:[{nm:'node',mt:'prm',$t:{t:m$hkm.Node}}],$cont:HtmlVisitor,d:['ceylon.markdown.html','HtmlVisitor','$m','getText$vsk0ho']};};
 //MethodDecl visitIndentedCode at HtmlVisitor.ceylon (143:1-147:2)
-htmlVisitor$.visitIndentedCode=function($tlk){var htmlVisitor$=this;
-return ($tll=m$t3v.$arr$sa$([($tlm=$tlk.text.linesWithBreaks,m$t41.Code(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tlm))],{t:m$t41.Code},1),m$t41.Pre(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tll));
-var $tll,$tlm;
+htmlVisitor$.visitIndentedCode=function($i29){var htmlVisitor$=this;
+return ($i2a=m$hkj.$arr$sa$([($i2b=$i29.text.linesWithBreaks,m$hkm.Code(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i2b))],{t:m$hkm.Code},1),m$hkm.Pre(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i2a));
+var $i2a,$i2b;
 };
-htmlVisitor$.visitIndentedCode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t41.Node},ps:[{nm:'indentedCode',mt:'prm',$t:{t:m$t3x.IndentedCode}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitIndentedCode']};};
+htmlVisitor$.visitIndentedCode.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkm.Node},ps:[{nm:'indentedCode',mt:'prm',$t:{t:m$hkn.IndentedCode}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitIndentedCode']};};
 //MethodDecl visitLink at HtmlVisitor.ceylon (149:1-154:2)
-htmlVisitor$.visitLink=function($tln){var htmlVisitor$=this;
-return ($tlo=$tln.destination,$tlp=(m$t3v.$eq$($tln.title,"")?null:$tln.title),$tlq=m$t3v.tpl$([],m$t3v.for$(function(){
+htmlVisitor$.visitLink=function($i2c){var htmlVisitor$=this;
+return ($i2d=$i2c.destination,$i2e=(m$hkj.$eq$($i2c.title,"")?null:$i2c.title),$i2f=m$hkj.tpl$([],m$hkj.for$(function(){
 //Comprehension at HtmlVisitor.ceylon (152:14-153:57)
-var $tlt;
-var $tlr=$tln.children.iterator(),$tls=m$t3v.finished();
-var n$tls=function(){
-while(($tls=$tlr.next())!==m$t3v.finished()){
-if(m$t3v.is$(($tlt=$tls.accept(htmlVisitor$,{Type$accept:m$t3v.mut$([{t:m$t41.Node},{t:m$t3v.$_String},{t:m$t3v.Sequential,a:{Element$Sequential:m$t3v.mut$([m$t3v.mit$([{t:m$t41.Node},{t:m$t41.FlowCategory}]),{t:m$t3v.$_String},{t:m$t41.Raw},{t:m$t41.Comment},{t:m$t41.ProcessingInstruction}])}}])})),m$t3v.mut$([{t:m$t41.FlowCategory},{t:m$t3v.$_String}]))){
-return $tls;
+var $i2i;
+var $i2g=$i2c.children.iterator(),$i2h=m$hkj.finished();
+var n$i2h=function(){
+while(($i2h=$i2g.next())!==m$hkj.finished()){
+if(m$hkj.is$(($i2i=$i2h.accept(htmlVisitor$,{Type$accept:m$hkj.mut$([{t:m$hkm.Node},{t:m$hkj.$_String},{t:m$hkj.Sequential,a:{Element$Sequential:m$hkj.mut$([m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.FlowCategory}]),{t:m$hkj.$_String},{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction}])}}])})),m$hkj.mut$([{t:m$hkm.FlowCategory},{t:m$hkj.$_String}]))){
+return $i2h;
 }
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
 return function(){
-if(n$tls()!==m$t3v.finished()){
-var $tlu=$tls,$tlv=$tlt;
-return $tlv;
+if(n$i2h()!==m$hkj.finished()){
+var $i2j=$i2h,$i2k=$i2i;
+return $i2k;
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
-},{Element$Iterable:m$t3v.mut$([m$t3v.mit$([{t:m$t41.Node},{t:m$t41.FlowCategory}]),{t:m$t3v.$_String}]),Absent$Iterable:{t:m$t3v.Null}})),m$t41.A(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tlp,undefined,undefined,$tlo,undefined,undefined,undefined,undefined,undefined,$tlq));
-var $tlo,$tlp,$tlq;
+},{Element$Iterable:m$hkj.mut$([m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.FlowCategory}]),{t:m$hkj.$_String}]),Absent$Iterable:{t:m$hkj.Null}})),m$hkm.A(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i2e,undefined,undefined,$i2d,undefined,undefined,undefined,undefined,undefined,$i2f));
+var $i2d,$i2e,$i2f;
 };
-htmlVisitor$.visitLink.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t41.Node},ps:[{nm:'link',mt:'prm',$t:{t:m$t3x.Link}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitLink']};};
+htmlVisitor$.visitLink.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkm.Node},ps:[{nm:'link',mt:'prm',$t:{t:m$hkn.Link}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitLink']};};
 //MethodDef visitListItem at HtmlVisitor.ceylon (156:1-178:1)
-htmlVisitor$.visitListItem=function($tlw){
+htmlVisitor$.visitListItem=function($i2l){
 var htmlVisitor$=this;
-var $tlx;
-if(m$t3v.is$(($tlx=$tlw.parent),{t:m$t3x.List})&&$tlx.tight){
-var $tly=m$t3v.empty();
+var $i2m;
+if(m$hkj.is$(($i2m=$i2l.parent),{t:m$hkn.List})&&$i2m.tight){
+var $i2n=m$hkj.empty();
 //'for' statement at HtmlVisitor.ceylon (159:3-167:3)
-var $tm0;for(var $tlz=$tlw.children.iterator();($tm0=$tlz.next())!==m$t3v.finished();){
-var $tm1=$tm0.accept(htmlVisitor$,{Type$accept:m$t3v.mut$([{t:m$t41.Node},{t:m$t3v.$_String},{t:m$t3v.Sequential,a:{Element$Sequential:m$t3v.mut$([m$t3v.mit$([{t:m$t41.Node},{t:m$t41.FlowCategory}]),{t:m$t3v.$_String},{t:m$t41.Raw},{t:m$t41.Comment},{t:m$t41.ProcessingInstruction}])}}])});
-var $tm2;
-if(m$t3v.is$(($tm2=$tm1),{t:m$t41.P})){
-$tly=$tly.append(m$t3v.tpl$([],m$t3v.for$(function(){
+var $i2p;for(var $i2o=$i2l.children.iterator();($i2p=$i2o.next())!==m$hkj.finished();){
+var $i2q=$i2p.accept(htmlVisitor$,{Type$accept:m$hkj.mut$([{t:m$hkm.Node},{t:m$hkj.$_String},{t:m$hkj.Sequential,a:{Element$Sequential:m$hkj.mut$([m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.FlowCategory}]),{t:m$hkj.$_String},{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction}])}}])});
+var $i2r;
+if(m$hkj.is$(($i2r=$i2q),{t:m$hkm.P})){
+$i2n=$i2n.append(m$hkj.tpl$([],m$hkj.for$(function(){
 //Comprehension at HtmlVisitor.ceylon (163:7-163:72)
-var $tm5;
-var $tm3=$tm2.children.iterator(),$tm4=m$t3v.finished();
-var n$tm4=function(){
-while(($tm4=$tm3.next())!==m$t3v.finished()){
-if(m$t3v.is$(($tm5=$tm4),m$t3v.mut$([{t:m$t41.Em},{t:m$t41.Strong},{t:m$t41.A},{t:m$t41.Code},{t:m$t41.Img},{t:m$t3v.$_String}]))){
-return $tm4;
+var $i2u;
+var $i2s=$i2r.children.iterator(),$i2t=m$hkj.finished();
+var n$i2t=function(){
+while(($i2t=$i2s.next())!==m$hkj.finished()){
+if(m$hkj.is$(($i2u=$i2t),m$hkj.mut$([{t:m$hkm.Em},{t:m$hkm.Strong},{t:m$hkm.A},{t:m$hkm.Code},{t:m$hkm.Img},{t:m$hkj.$_String}]))){
+return $i2t;
 }
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
 return function(){
-if(n$tm4()!==m$t3v.finished()){
-var $tm6=$tm4,$tm7=$tm5;
-return $tm7;
+if(n$i2t()!==m$hkj.finished()){
+var $i2v=$i2t,$i2w=$i2u;
+return $i2w;
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
-},{Element$Iterable:m$t3v.mut$([{t:m$t41.Em},{t:m$t41.Strong},{t:m$t41.A},{t:m$t41.Code},{t:m$t41.Img},{t:m$t3v.$_String}]),Absent$Iterable:{t:m$t3v.Null}})),{Other$append:m$t3v.mut$([{t:m$t41.Em},{t:m$t41.Strong},{t:m$t41.A},{t:m$t41.Code},{t:m$t41.Img},{t:m$t3v.$_String}])});
+},{Element$Iterable:m$hkj.mut$([{t:m$hkm.Em},{t:m$hkm.Strong},{t:m$hkm.A},{t:m$hkm.Code},{t:m$hkm.Img},{t:m$hkj.$_String}]),Absent$Iterable:{t:m$hkj.Null}})),{Other$append:m$hkj.mut$([{t:m$hkm.Em},{t:m$hkm.Strong},{t:m$hkm.A},{t:m$hkm.Code},{t:m$hkm.Img},{t:m$hkj.$_String}])});
 }
 else{
-var $tm8;
-if(m$t3v.is$(($tm8=$tm2),m$t3v.mut$([{t:m$t41.FlowCategory},{t:m$t3v.$_String}]))){
-$tly=$tly.append(m$t3v.tpl$([$tm8]),{Other$append:m$t3v.mut$([m$t3v.mit$([{t:m$t41.Node},{t:m$t41.FlowCategory}]),{t:m$t3v.$_String}])});
+var $i2x;
+if(m$hkj.is$(($i2x=$i2r),m$hkj.mut$([{t:m$hkm.FlowCategory},{t:m$hkj.$_String}]))){
+$i2n=$i2n.append(m$hkj.tpl$([$i2x]),{Other$append:m$hkj.mut$([m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.FlowCategory}]),{t:m$hkj.$_String}])});
 }
 }
 }
-return ($tm9=$tly,m$t41.Li(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tm9));
-var $tm9;
+return ($i2y=$i2n,m$hkm.Li(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i2y));
+var $i2y;
 }
-return ($tma=m$t3v.tpl$([],m$t3v.for$(function(){
-//Comprehension at HtmlVisitor.ceylon (175:15-176:58)
-var $tmd;
-var $tmb=$tlw.children.iterator(),$tmc=m$t3v.finished();
-var n$tmc=function(){
-while(($tmc=$tmb.next())!==m$t3v.finished()){
-if(m$t3v.is$(($tmd=$tmc.accept(htmlVisitor$,{Type$accept:m$t3v.mut$([{t:m$t41.Node},{t:m$t3v.$_String},{t:m$t3v.Sequential,a:{Element$Sequential:m$t3v.mut$([m$t3v.mit$([{t:m$t41.Node},{t:m$t41.FlowCategory}]),{t:m$t3v.$_String},{t:m$t41.Raw},{t:m$t41.Comment},{t:m$t41.ProcessingInstruction}])}}])})),m$t3v.mut$([{t:m$t41.FlowCategory},{t:m$t3v.$_String}]))){
-return $tmc;
+return ($i2z=m$hkj.tpl$([],m$hkj.for$(function(){
+//Comprehension at HtmlVisitor.ceylon (175:15-176:72)
+var $i32;
+var $i30=$i2l.children.iterator(),$i31=m$hkj.finished();
+var n$i31=function(){
+while(($i31=$i30.next())!==m$hkj.finished()){
+if(m$hkj.is$(($i32=$i31.accept(htmlVisitor$,{Type$accept:m$hkj.mut$([{t:m$hkm.Node},{t:m$hkj.$_String},{t:m$hkj.Sequential,a:{Element$Sequential:m$hkj.mut$([m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.FlowCategory}]),{t:m$hkj.$_String},{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction}])}}])})),m$hkj.mut$([m$hkm.CharacterData(),{t:m$hkm.FlowCategory},{t:m$hkj.$_String}]))){
+return $i31;
 }
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
 return function(){
-if(n$tmc()!==m$t3v.finished()){
-var $tme=$tmc,$tmf=$tmd;
-return $tmf;
+if(n$i31()!==m$hkj.finished()){
+var $i33=$i31,$i34=$i32;
+return $i34;
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
-},{Element$Iterable:m$t3v.mut$([m$t3v.mit$([{t:m$t41.Node},{t:m$t41.FlowCategory}]),{t:m$t3v.$_String}]),Absent$Iterable:{t:m$t3v.Null}})),m$t41.Li(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tma));
-var $tma;
-};htmlVisitor$.visitListItem.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t41.Node},ps:[{nm:'listItem',mt:'prm',$t:{t:m$t3x.ListItem}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitListItem']};};
+},{Element$Iterable:m$hkj.mut$([{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction},m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.FlowCategory}]),{t:m$hkj.$_String}]),Absent$Iterable:{t:m$hkj.Null}})),m$hkm.Li(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i2z));
+var $i2z;
+};htmlVisitor$.visitListItem.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkm.Node},ps:[{nm:'listItem',mt:'prm',$t:{t:m$hkn.ListItem}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitListItem']};};
 //MethodDecl visitOrderedList at HtmlVisitor.ceylon (180:1-183:2)
-htmlVisitor$.visitOrderedList=function($tmg){var htmlVisitor$=this;
-return ($tmh=m$t3v.tpl$([],m$t3v.for$(function(){
-//Comprehension at HtmlVisitor.ceylon (181:14-182:47)
-var $tmk;
-var $tmi=$tmg.children.iterator(),$tmj=m$t3v.finished();
-var n$tmj=function(){
-while(($tmj=$tmi.next())!==m$t3v.finished()){
-if(m$t3v.is$(($tmk=$tmj.accept(htmlVisitor$,{Type$accept:m$t3v.mut$([{t:m$t41.Node},{t:m$t3v.$_String},{t:m$t3v.Sequential,a:{Element$Sequential:m$t3v.mut$([m$t3v.mit$([{t:m$t41.Node},{t:m$t41.FlowCategory}]),{t:m$t3v.$_String},{t:m$t41.Raw},{t:m$t41.Comment},{t:m$t41.ProcessingInstruction}])}}])})),m$t3v.mut$([{t:m$t41.Li},{t:m$t3v.$_String}]))){
-return $tmj;
+htmlVisitor$.visitOrderedList=function($i35){var htmlVisitor$=this;
+return ($i36=m$hkj.tpl$([],m$hkj.for$(function(){
+//Comprehension at HtmlVisitor.ceylon (181:14-182:61)
+var $i39;
+var $i37=$i35.children.iterator(),$i38=m$hkj.finished();
+var n$i38=function(){
+while(($i38=$i37.next())!==m$hkj.finished()){
+if(m$hkj.is$(($i39=$i38.accept(htmlVisitor$,{Type$accept:m$hkj.mut$([{t:m$hkm.Node},{t:m$hkj.$_String},{t:m$hkj.Sequential,a:{Element$Sequential:m$hkj.mut$([m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.FlowCategory}]),{t:m$hkj.$_String},{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction}])}}])})),m$hkj.mut$([m$hkm.CharacterData(),{t:m$hkm.Li},{t:m$hkj.$_String}]))){
+return $i38;
 }
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
 return function(){
-if(n$tmj()!==m$t3v.finished()){
-var $tml=$tmj,$tmm=$tmk;
-return $tmm;
+if(n$i38()!==m$hkj.finished()){
+var $i3a=$i38,$i3b=$i39;
+return $i3b;
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
-},{Element$Iterable:m$t3v.mut$([{t:m$t41.Li},{t:m$t3v.$_String}]),Absent$Iterable:{t:m$t3v.Null}})),m$t41.Ol(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tmh));
-var $tmh;
+},{Element$Iterable:m$hkj.mut$([{t:m$hkj.$_String},{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction},{t:m$hkm.Li}]),Absent$Iterable:{t:m$hkj.Null}})),m$hkm.Ol(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i36));
+var $i36;
 };
-htmlVisitor$.visitOrderedList.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t41.Node},ps:[{nm:'orderedList',mt:'prm',$t:{t:m$t3x.OrderedList}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitOrderedList']};};
+htmlVisitor$.visitOrderedList.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkm.Node},ps:[{nm:'orderedList',mt:'prm',$t:{t:m$hkn.OrderedList}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitOrderedList']};};
 //MethodDecl visitParagraph at HtmlVisitor.ceylon (185:1-188:2)
-htmlVisitor$.visitParagraph=function($tmn){var htmlVisitor$=this;
-return ($tmo=m$t3v.tpl$([],m$t3v.for$(function(){
-//Comprehension at HtmlVisitor.ceylon (186:14-187:61)
-var $tmr;
-var $tmp=$tmn.children.iterator(),$tmq=m$t3v.finished();
-var n$tmq=function(){
-while(($tmq=$tmp.next())!==m$t3v.finished()){
-if(m$t3v.is$(($tmr=$tmq.accept(htmlVisitor$,{Type$accept:m$t3v.mut$([{t:m$t41.Node},{t:m$t3v.$_String},{t:m$t3v.Sequential,a:{Element$Sequential:m$t3v.mut$([m$t3v.mit$([{t:m$t41.Node},{t:m$t41.FlowCategory}]),{t:m$t3v.$_String},{t:m$t41.Raw},{t:m$t41.Comment},{t:m$t41.ProcessingInstruction}])}}])})),m$t3v.mut$([{t:m$t41.PhrasingCategory},{t:m$t3v.$_String}]))){
-return $tmq;
+htmlVisitor$.visitParagraph=function($i3c){var htmlVisitor$=this;
+return ($i3d=m$hkj.tpl$([],m$hkj.for$(function(){
+//Comprehension at HtmlVisitor.ceylon (186:14-187:75)
+var $i3g;
+var $i3e=$i3c.children.iterator(),$i3f=m$hkj.finished();
+var n$i3f=function(){
+while(($i3f=$i3e.next())!==m$hkj.finished()){
+if(m$hkj.is$(($i3g=$i3f.accept(htmlVisitor$,{Type$accept:m$hkj.mut$([{t:m$hkm.Node},{t:m$hkj.$_String},{t:m$hkj.Sequential,a:{Element$Sequential:m$hkj.mut$([m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.FlowCategory}]),{t:m$hkj.$_String},{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction}])}}])})),m$hkj.mut$([{t:m$hkm.PhrasingCategory},m$hkm.CharacterData(),{t:m$hkj.$_String}]))){
+return $i3f;
 }
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
 return function(){
-if(n$tmq()!==m$t3v.finished()){
-var $tms=$tmq,$tmt=$tmr;
-return $tmt;
+if(n$i3f()!==m$hkj.finished()){
+var $i3h=$i3f,$i3i=$i3g;
+return $i3i;
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
-},{Element$Iterable:m$t3v.mut$([m$t3v.mit$([{t:m$t41.Node},{t:m$t41.PhrasingCategory}]),{t:m$t3v.$_String}]),Absent$Iterable:{t:m$t3v.Null}})),m$t41.P(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tmo));
-var $tmo;
+},{Element$Iterable:m$hkj.mut$([m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.PhrasingCategory}]),{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction},{t:m$hkj.$_String}]),Absent$Iterable:{t:m$hkj.Null}})),m$hkm.P(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i3d));
+var $i3d;
 };
-htmlVisitor$.visitParagraph.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t41.Node},ps:[{nm:'paragraph',mt:'prm',$t:{t:m$t3x.Paragraph}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitParagraph']};};
+htmlVisitor$.visitParagraph.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkm.Node},ps:[{nm:'paragraph',mt:'prm',$t:{t:m$hkn.Paragraph}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitParagraph']};};
 //MethodDecl visitSoftBreak at HtmlVisitor.ceylon (190:1-190:73)
-htmlVisitor$.visitSoftBreak=function($tmu){return "\n";
+htmlVisitor$.visitSoftBreak=function($i3j){return "\n";
 };
-htmlVisitor$.visitSoftBreak.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t3v.$_String},ps:[{nm:'softBreak',mt:'prm',$t:{t:m$t3x.SoftBreak}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitSoftBreak']};};
+htmlVisitor$.visitSoftBreak.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkj.$_String},ps:[{nm:'softBreak',mt:'prm',$t:{t:m$hkn.SoftBreak}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitSoftBreak']};};
 //MethodDecl visitStrongEmphasis at HtmlVisitor.ceylon (192:1-195:2)
-htmlVisitor$.visitStrongEmphasis=function($tmv){var htmlVisitor$=this;
-return ($tmw=m$t3v.tpl$([],m$t3v.for$(function(){
-//Comprehension at HtmlVisitor.ceylon (193:14-194:61)
-var $tmz;
-var $tmx=$tmv.children.iterator(),$tmy=m$t3v.finished();
-var n$tmy=function(){
-while(($tmy=$tmx.next())!==m$t3v.finished()){
-if(m$t3v.is$(($tmz=$tmy.accept(htmlVisitor$,{Type$accept:m$t3v.mut$([{t:m$t41.Node},{t:m$t3v.$_String},{t:m$t3v.Sequential,a:{Element$Sequential:m$t3v.mut$([m$t3v.mit$([{t:m$t41.Node},{t:m$t41.FlowCategory}]),{t:m$t3v.$_String},{t:m$t41.Raw},{t:m$t41.Comment},{t:m$t41.ProcessingInstruction}])}}])})),m$t3v.mut$([{t:m$t41.PhrasingCategory},{t:m$t3v.$_String}]))){
-return $tmy;
+htmlVisitor$.visitStrongEmphasis=function($i3k){var htmlVisitor$=this;
+return ($i3l=m$hkj.tpl$([],m$hkj.for$(function(){
+//Comprehension at HtmlVisitor.ceylon (193:14-194:75)
+var $i3o;
+var $i3m=$i3k.children.iterator(),$i3n=m$hkj.finished();
+var n$i3n=function(){
+while(($i3n=$i3m.next())!==m$hkj.finished()){
+if(m$hkj.is$(($i3o=$i3n.accept(htmlVisitor$,{Type$accept:m$hkj.mut$([{t:m$hkm.Node},{t:m$hkj.$_String},{t:m$hkj.Sequential,a:{Element$Sequential:m$hkj.mut$([m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.FlowCategory}]),{t:m$hkj.$_String},{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction}])}}])})),m$hkj.mut$([{t:m$hkm.PhrasingCategory},m$hkm.CharacterData(),{t:m$hkj.$_String}]))){
+return $i3n;
 }
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
 return function(){
-if(n$tmy()!==m$t3v.finished()){
-var $tn0=$tmy,$tn1=$tmz;
-return $tn1;
+if(n$i3n()!==m$hkj.finished()){
+var $i3p=$i3n,$i3q=$i3o;
+return $i3q;
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
-},{Element$Iterable:m$t3v.mut$([m$t3v.mit$([{t:m$t41.Node},{t:m$t41.PhrasingCategory}]),{t:m$t3v.$_String}]),Absent$Iterable:{t:m$t3v.Null}})),m$t41.Strong(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tmw));
-var $tmw;
+},{Element$Iterable:m$hkj.mut$([m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.PhrasingCategory}]),{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction},{t:m$hkj.$_String}]),Absent$Iterable:{t:m$hkj.Null}})),m$hkm.Strong(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i3l));
+var $i3l;
 };
-htmlVisitor$.visitStrongEmphasis.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t41.Node},ps:[{nm:'strongEmphasis',mt:'prm',$t:{t:m$t3x.StrongEmphasis}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitStrongEmphasis']};};
+htmlVisitor$.visitStrongEmphasis.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkm.Node},ps:[{nm:'strongEmphasis',mt:'prm',$t:{t:m$hkn.StrongEmphasis}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitStrongEmphasis']};};
 //MethodDecl visitText at HtmlVisitor.ceylon (197:1-197:63)
-htmlVisitor$.visitText=function($tn2){var htmlVisitor$=this;
-return $tn2.text;
+htmlVisitor$.visitText=function($i3r){var htmlVisitor$=this;
+return $i3r.text;
 };
-htmlVisitor$.visitText.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t3v.$_String},ps:[{nm:'text',mt:'prm',$t:{t:m$t3x.Text}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitText']};};
+htmlVisitor$.visitText.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkj.$_String},ps:[{nm:'text',mt:'prm',$t:{t:m$hkn.Text}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitText']};};
 //MethodDecl visitThematicBreak at HtmlVisitor.ceylon (199:1-199:87)
-htmlVisitor$.visitThematicBreak=function($tn3){return m$t41.Hr();
+htmlVisitor$.visitThematicBreak=function($i3s){return m$hkm.Hr();
 };
-htmlVisitor$.visitThematicBreak.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t41.Node},ps:[{nm:'thematicBreak',mt:'prm',$t:{t:m$t3x.ThematicBreak}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitThematicBreak']};};
+htmlVisitor$.visitThematicBreak.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkm.Node},ps:[{nm:'thematicBreak',mt:'prm',$t:{t:m$hkn.ThematicBreak}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitThematicBreak']};};
 //MethodDecl visitUnorderedList at HtmlVisitor.ceylon (201:1-204:2)
-htmlVisitor$.visitUnorderedList=function($tn4){var htmlVisitor$=this;
-return ($tn5=m$t3v.tpl$([],m$t3v.for$(function(){
+htmlVisitor$.visitUnorderedList=function($i3t){var htmlVisitor$=this;
+return ($i3u=m$hkj.tpl$([],m$hkj.for$(function(){
 //Comprehension at HtmlVisitor.ceylon (202:14-203:61)
-var $tn8;
-var $tn6=$tn4.children.iterator(),$tn7=m$t3v.finished();
-var n$tn7=function(){
-while(($tn7=$tn6.next())!==m$t3v.finished()){
-if(m$t3v.is$(($tn8=$tn7.accept(htmlVisitor$,{Type$accept:m$t3v.mut$([{t:m$t41.Node},{t:m$t3v.$_String},{t:m$t3v.Sequential,a:{Element$Sequential:m$t3v.mut$([m$t3v.mit$([{t:m$t41.Node},{t:m$t41.FlowCategory}]),{t:m$t3v.$_String},{t:m$t41.Raw},{t:m$t41.Comment},{t:m$t41.ProcessingInstruction}])}}])})),m$t3v.mut$([m$t41.CharacterData(),{t:m$t41.Li},{t:m$t3v.$_String}]))){
-return $tn7;
+var $i3x;
+var $i3v=$i3t.children.iterator(),$i3w=m$hkj.finished();
+var n$i3w=function(){
+while(($i3w=$i3v.next())!==m$hkj.finished()){
+if(m$hkj.is$(($i3x=$i3w.accept(htmlVisitor$,{Type$accept:m$hkj.mut$([{t:m$hkm.Node},{t:m$hkj.$_String},{t:m$hkj.Sequential,a:{Element$Sequential:m$hkj.mut$([m$hkj.mit$([{t:m$hkm.Node},{t:m$hkm.FlowCategory}]),{t:m$hkj.$_String},{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction}])}}])})),m$hkj.mut$([m$hkm.CharacterData(),{t:m$hkm.Li},{t:m$hkj.$_String}]))){
+return $i3w;
 }
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
 return function(){
-if(n$tn7()!==m$t3v.finished()){
-var $tn9=$tn7,$tna=$tn8;
-return $tna;
+if(n$i3w()!==m$hkj.finished()){
+var $i3y=$i3w,$i3z=$i3x;
+return $i3z;
 }
-return m$t3v.finished();
+return m$hkj.finished();
 }
-},{Element$Iterable:m$t3v.mut$([{t:m$t3v.$_String},{t:m$t41.Raw},{t:m$t41.Comment},{t:m$t41.ProcessingInstruction},{t:m$t41.Li}]),Absent$Iterable:{t:m$t3v.Null}})),m$t41.Ul(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tn5));
-var $tn5;
+},{Element$Iterable:m$hkj.mut$([{t:m$hkj.$_String},{t:m$hkm.Raw},{t:m$hkm.Comment},{t:m$hkm.ProcessingInstruction},{t:m$hkm.Li}]),Absent$Iterable:{t:m$hkj.Null}})),m$hkm.Ul(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i3u));
+var $i3u;
 };
-htmlVisitor$.visitUnorderedList.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t41.Node},ps:[{nm:'unorderedList',mt:'prm',$t:{t:m$t3x.UnorderedList}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitUnorderedList']};};
+htmlVisitor$.visitUnorderedList.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkm.Node},ps:[{nm:'unorderedList',mt:'prm',$t:{t:m$hkn.UnorderedList}}],$cont:HtmlVisitor,pa:11,d:['ceylon.markdown.html','HtmlVisitor','$m','visitUnorderedList']};};
 })(HtmlVisitor.$$.prototype);
 }
 return HtmlVisitor;
@@ -449,17 +449,17 @@ ex$.$init$HtmlVisitor=$init$HtmlVisitor;
 $init$HtmlVisitor();
 
 //MethodDecl renderCompleteHtml at renderHtml.ceylon (11:0-22:1)
-function renderCompleteHtml($tnp){return ($tnq=m$t3v.$arr$sa$([($tnr=m$t3v.$arr$sa$([($tns="utf-8",m$t41.Meta(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tns,undefined))],{t:m$t41.Meta},1),m$t41.Head(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tnr)),($tnt=HtmlVisitor().visitDocument($tnp),m$t41.Body(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tnt))],m$t3v.mut$([{t:m$t41.Head},{t:m$t41.Body}]),1),m$t41.Html(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$tnq));
-var $tnq,$tnr,$tns,$tnt;
+function renderCompleteHtml($i4e){return ($i4f=m$hkj.$arr$sa$([($i4g=m$hkj.$arr$sa$([($i4h="utf-8",m$hkm.Meta(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i4h,undefined))],{t:m$hkm.Meta},1),m$hkm.Head(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i4g)),($i4i=HtmlVisitor().visitDocument($i4e),m$hkm.Body(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i4i))],m$hkj.mut$([{t:m$hkm.Head},{t:m$hkm.Body}]),1),m$hkm.Html(undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,undefined,$i4f));
+var $i4f,$i4g,$i4h,$i4i;
 };
-renderCompleteHtml.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t41.Html},ps:[{nm:'document',mt:'prm',$t:{t:m$t3x.Document}}],pa:1,an:function(){return[m$t3v.doc$($CCMM$,'ceylon.markdown.html:renderCompleteHtml')];},d:['ceylon.markdown.html','renderCompleteHtml']};};
+renderCompleteHtml.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkm.Html},ps:[{nm:'document',mt:'prm',$t:{t:m$hkn.Document}}],pa:1,an:function(){return[m$hkj.doc$($CCMM$,'ceylon.markdown.html:renderCompleteHtml')];},d:['ceylon.markdown.html','renderCompleteHtml']};};
 ex$.renderCompleteHtml=renderCompleteHtml;
 //MethodDecl renderPartialHtml at renderHtml.ceylon (24:0-28:42)
-function renderPartialHtml($tnu){return HtmlVisitor().visitDocument($tnu);
+function renderPartialHtml($i4j){return HtmlVisitor().visitDocument($i4j);
 };
-renderPartialHtml.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$t3v.Sequential,a:{Element$Sequential:HtmlChildren()}},ps:[{nm:'document',mt:'prm',$t:{t:m$t3x.Document}}],pa:1,an:function(){return[m$t3v.doc$($CCMM$,'ceylon.markdown.html:renderPartialHtml')];},d:['ceylon.markdown.html','renderPartialHtml']};};
+renderPartialHtml.$crtmm$=function(){return{mod:$CCMM$,$t:{t:m$hkj.Sequential,a:{Element$Sequential:HtmlChildren()}},ps:[{nm:'document',mt:'prm',$t:{t:m$hkn.Document}}],pa:1,an:function(){return[m$hkj.doc$($CCMM$,'ceylon.markdown.html:renderPartialHtml')];},d:['ceylon.markdown.html','renderPartialHtml']};};
 ex$.renderPartialHtml=renderPartialHtml;
-ex$.$pkg$ans$ceylon$markdown$html=function(){return[m$t3v.suppressWarnings(m$t3v.$arr$sa$(["ceylonNamespace"],{t:m$t3v.$_String})),m$t3v.shared()];};
+ex$.$pkg$ans$ceylon$markdown$html=function(){return[m$hkj.suppressWarnings(m$hkj.$arr$sa$(["ceylonNamespace"],{t:m$hkj.$_String})),m$hkj.shared()];};
 });
 }(typeof define==='function' && define.amd ? define : function (factory) {
 if (typeof exports!=='undefined') { factory(require, exports, module);

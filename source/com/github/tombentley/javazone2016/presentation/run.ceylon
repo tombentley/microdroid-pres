@@ -6,6 +6,11 @@ import ceylon.html {
 import com.github.tombentley.deck {
     Presentation
 }
+import ceylon.interop.browser.dom {
+    document,
+    EventListener,
+    Event
+}
 
 "Put the given string inside <pre><code>"
 Pre code(String text)
@@ -34,27 +39,43 @@ shared void foo() {
     }
 }
 
+void setup() {
+    assert(exists slidesDiv = document.getElementById("slides"));
+    slidesDiv.innerHTML = presentation.rendered;
+    print("Set inner html");
+    dynamic {
+        // ask Rainbow to do syntax highlighting
+        //Rainbow.color();
+        // finally we let impress.js do its thing
+        dynamic i =  impress();
+        i.init();
+    }
+}
+
 "Generate the presentation as HTML"
 shared void run() {
     print("module running");
+    document.title = "The most amazing Ceylon presentation you'll ever see";
+    print("title set");
+    if (document.readyState == "complete"
+            || document.readyState == "loaded"
+            || document.readyState == "interactive") {
+        setup();
+    } else {
+        document.addEventListener("DOMContentLoaded", object satisfies EventListener {
+            shared actual void handleEvent(Event event) {
+                setup();
+            }
+        });
+    }
+    
+    print("/run");
+    /*
     dynamic {
         document.title = "The most amazing Ceylon presentation you'll ever see";
         // TODO replace the div with the rendered presentation
-        /*document.addEventListener("DOMContentLoaded", object {
-            shared void handleEvent(dynamic event) {
-                print("DOMContentLoaded");
-                assert(exists slidesDiv = document.getElementById("slides"));
-                slidesDiv.innerHTML = presentation.rendered;
-                dynamic {
-                    // ask Rainbow to do syntax highlighting
-                    Rainbow.color();
-                    // finally we let impress.js do its thing
-                    dynamic i =  impress();
-                    i.init();
-                }
-            }
-        });
+        /*
          */
         window.onload= foo;
-    }
+    }*/
 }
